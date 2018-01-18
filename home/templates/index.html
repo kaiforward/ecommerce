@@ -91,10 +91,10 @@
 
 <div class="rowcontainer wrap">
 	{% for category in featured_categories %}
-		<div class="rel categorywrap">
+		<a href="{% url 'productsall' category.pk %}" class="rel categorywrap">{{ collection }}
 			<img class="categoryimg" src="/media/{{ category.image }}">
 			<p class="categorytext"> {{ category.name }}</p>
-		</div>
+		</a>
 	{% endfor %}
 </div>
 

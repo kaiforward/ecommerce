@@ -15,12 +15,14 @@
 </head>
 
 <body>
+
     <div class="rel headerwrap">
-        <img class="backgroundimg" src="{% static 'photo.jpg' %}">
+        <img class="backgroundimg" src="/media/{{ navbar_content.image }}">
         <a href="/" class="abs myheader">
-           <h3 class="largeheadertext">Eva Brudnell </h3> 
+           <h3 class="largeheadertext"> {{ navbar_content.headline }} </h3> 
         </a> 
     </div>
+
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
 
         <!-- logo/brand -->

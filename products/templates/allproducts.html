@@ -4,34 +4,27 @@
 {% load thumbnail %}
 
 {% block content %}
-
-<div class="mygrid">
+	<div class="rowcontainer wrap">
 	{% for product in products %}
-		<div class="colcontainer rel">
+			<a href="{% url 'productdetail' product.pk %}" class="colcontainer rel productwrapper pointer">
 			<!-- feels reeeeeal hacky -->
 			{% for photo in product.photo_set.all %}
 				{% if forloop.first %}
-					{% thumbnail photo.image "400x300" crop="center" as im %}
-					    <img class="img" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-					{% endthumbnail %}
+					<img class="productimg" src="/media/{{ photo.image }}">
 				{% endif %}				  		
 			{% endfor %}
 
-			<div class="productinfo abs imagetext">
-				
+			<div class="productinfo abs imagetext">				
 				<div class="infowrap">
 					<h3>{{ product.name }}</h3>
 				</div>
 				<div class="infowrap">
 					<h3 class="productinfobox">£{{ product.price }}</h3>
-					<button class="btn" onclick="location.href='{% url 'productdetail' product.pk %}'">More</button>
 				</div>
 			</div>
-
-		</div>
+		</a>					
 	{% endfor %}
 </div>
-
 
 
 {% endblock %}

@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # My Custom Context Processor
                 'products.context_processors.nav_categories', 
+                'home.context_processors.nav_homepage', 
             ],
         },
     },

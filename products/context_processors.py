@@ -11,3 +11,5 @@ def nav_categories(request):
     Return Categories for use by Navbar
     """
 	return {'categories': Category.objects.all()}
+
+
