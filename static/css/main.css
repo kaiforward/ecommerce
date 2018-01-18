@@ -189,9 +189,11 @@ body {
 	width: 50%;
 }
 .categorytext {
+	width: 100%;
 	font-size: 1em;
 	color: #212529;
 	z-index: 1;
+	text-align: center;
 }
 .myimg {
 	width:100%;
@@ -288,24 +290,6 @@ body {
 		justify-content: space-between;
 		width: 70%;
 	}
-	.categorywrap:hover img{
-		filter: brightness(0.4);
-	}
-	.categorywrap:hover p{
-		opacity: 1;
-	}
-	.categorytext {
-		position: absolute;
-		font-size: 2em;
-		opacity: 0;
-		transition: opacity 0.2s;
-		-webkit-transition: opacity 0.2s;
-		-moz-transition: opacity 0.2s;
-		color: white;
-		z-index: 1;
-		width: 100%;
-		text-align: center;
-	}
 	.aboutdesc {
 		width:60%;
 	}
@@ -318,6 +302,7 @@ body {
 	.featureimg {
 		height: 300px;
 	}
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -333,6 +318,22 @@ body {
 	}
 	.productimg {
 		height: 400px;
+	}
+
+	.categorywrap:hover img{
+		filter: brightness(0.4);
+	}
+	.categorywrap:hover p{
+		opacity: 1;
+	}
+	.categorytext {
+		position: absolute;
+		font-size: 2em;
+		opacity: 0;
+		transition: opacity 0.2s;
+		-webkit-transition: opacity 0.2s;
+		-moz-transition: opacity 0.2s;
+		color: white;
 	}
 
 }	
