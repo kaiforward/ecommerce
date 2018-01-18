@@ -1,2 +1,4 @@
-media/chache/*
+media/cache/*
+media/cache/*/*
+media/cache/*/*/*
 media/images/*
