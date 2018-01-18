@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="hompagecarousel" class="carousel mycarousel slide" data-ride="carousel" style="width:100%;">
+	<div class="carousel-inner" role="listbox">
+		<!-- allows for all products from any collection to be shown -->
+		<!-- using FOO_set allows objects to access related foreign key objects -->
+		{% for product in home_carousel.category.product_set.all %}
+			{% if forloop.first %}
+				{% for photo in product.photo_set.all %}
+					{% if forloop.first %}					
+							<div class="carousel-item active">
+								<a onclick="location.href='{% url 'productdetail' product.pk %}'">
+									<img class="d-block myimg"  src="/media/{{ photo.image }}">					
+							  		<div class="carousel-caption">
+								    	<h3> {{ product.name }} </h3>
+								    	<p>{{ home_carousel.category.name }}</p>
+									</div>
+								</a>
+							</div>
+					{% endif %}
+				{% endfor %}
+			{% else %}
+				{% for photo in product.photo_set.all %}
+					{% if forloop.first %}
+						<!-- for the carousel to work we use if statement to add active class to first item only -->
+							<div class="carousel-item">
+								<a onclick="location.href='{% url 'productdetail' product.pk %}'">
+									<img class="d-block myimg"  src="/media/{{ photo.image }}">
+									<div class="carousel-caption">
+									    <h3> {{ product.name }} </h3>
+									    <p>{{ home_carousel.category.name }}</p>
+									</div>	
+								</a>					  		
+							</div>	
+					{% endif %}	
+				{% endfor %}
+			{% endif %}
+		{% endfor %}
+	</div>
+	<a class="carousel-control-prev color" href="#hompagecarousel" role="button" data-slide="prev">
+		<i class="fa fa-chevron-left"></i>
+	</a>
+	<a class="carousel-control-next color" href="#hompagecarousel" role="button" data-slide="next">
+		<i class="fa fa-chevron-right"></i>
+	</a>
+</div>
+
+<hr>
+
+<div class="rel headerwrap">
+    <img class="headerimg" src="{% static 'photo.jpg' %}">
+    <h3 class="abs smallheadertext">Featured</h3>
+</div>
+
+<hr>
+
+<div class="featurewrapper">
+	{% for photo in featured_products.product_one.photo_set.all %}
+			{% if forloop.first %}
+				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_one.pk %}'">
+					<div class="abs imagetextdark">{{ featured_products.product_one.name }}</div>
+					<img  class="featureimg" src="/media/{{ photo.image }}">
+				</a>
+			{% endif %}
+	{% endfor %}
+	{% for photo in featured_products.product_two.photo_set.all %}
+			{% if forloop.first %}
+				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_two.pk %}'">
+					<div class="abs imagetextdark">{{ featured_products.product_two.name }}</div>
+					<img class="featureimg" src="/media/{{ photo.image }}">
+				</a>
+			{% endif %}
+	{% endfor %}
+	{% for photo in featured_products.product_three.photo_set.all %}
+			{% if forloop.first %}
+				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_three.pk %}'">
+					<div class="abs imagetextdark">{{ featured_products.product_three.name }}</div>
+					<img class="featureimg" src="/media/{{ photo.image }}">
+				</a>
+			{% endif %}
+	{% endfor %}
+</div>
+
+<div class="hr"></div>
+<h2 class="textheader">Recent Collections </h2>
+<div class="hr"></div>
+
+<div class="rowcontainer wrap">
+	{% for category in featured_categories %}
+		<div class="rel categorywrap">
+			<img class="categoryimg" src="/media/{{ category.image }}">
+			<p class="categorytext"> {{ category.name }}</p>
+		</div>
+	{% endfor %}
+</div>
+
+<div class="hr"></div>
+<h2 class="textheader">Recent Blogs </h2>
+<div class="hr"></div>
+
+{% for post in blogs %}
+	<h3>{{ post.headline }}</h3>
+	<div class="colcontainer">		
+		<div class="rowcolcontainer">
+			{% if post.image %}
+				<div class="productbox">
+					<img src="/media/{{ post.image }}" class="featureimg" style="border-radius: 10px;">		
+				</div>
+			{% endif %}
+			<div class="productbox">
+				<div class="colcontainer padding">
+					{{ post.description|safe }}
+					{{ post.date }}
+				</div>
+			</div>
+		</div>
+	</div>	
+{% endfor %}
+
+{% endblock %}

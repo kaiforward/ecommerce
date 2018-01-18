@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="hr"></div>
+	<h1 class="textheader"> {{ about_info.headline }} </h1>
+<div class="hr"></div>
+	<div class="aboutdesc">{{ about_info.content|safe }}</div>
+<div class="hr"></div>
+
+{% endblock %}
