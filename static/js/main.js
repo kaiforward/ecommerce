@@ -1,14 +1,14 @@
-$(document).ready(function(){
-	$( ".mydropdown" ).on("tap", function(){
+$( document ).ready(function() {
+	$( ".mydropdownbutton" ).on("tap", function(){
 	 	$( ".dropdownlinks" ).slideToggle('fast');
-	})
+	})	
 	if($('#isntmobile').is(':visible')) {
 		$( ".mydropdown" ).hover(function(){
 		 	$( ".dropdownlinks" ).slideToggle('fast');
 		})		
 	}
-	else {
-		$( ".mydropdown" ).click(function(){
+	else {	
+		$( ".mydropdownbutton" ).click(function(){
 		 	$( ".dropdownlinks" ).slideToggle('fast');
 		})
 	};
