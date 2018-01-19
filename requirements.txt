@@ -1,9 +1,1 @@
-dj-database-url==0.4.2
-Django==2.0
-django-tinymce==2.7.0
-easy-thumbnails==2.5
-gunicorn==19.7.1
-Pillow==5.0.0
-pyenchant==2.0.0
-pytz==2017.3
-sorl-thumbnail==12.4.1
+-r requirements/staging.txt
