@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',
-    # 'easy_thumbnails',
     'home',
     'products',
     'blog',
     'cart',
+    # 'easy_thumbnails',    
     # 'sorl.thumbnail',
 ]
 
