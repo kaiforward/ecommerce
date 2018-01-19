@@ -10,7 +10,7 @@ DATABASES = {
 }
 
 SITE_URL = 'https://evabrudenell.herokuapp.com/'
-ALLOWED_HOSTS.append('https://evabrudenell.herokuapp.com/')
+ALLOWED_HOSTS.append('evabrudenell.herokuapp.com/')
  
 # Log DEBUG information to the console
 LOGGING = {
