@@ -136,6 +136,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", "js",
+                               "tinymce", "tinymce.min.js")
+
 TINYMCE_DEFAULT_CONFIG = {
     'width': '100%',
     'height': 300,
