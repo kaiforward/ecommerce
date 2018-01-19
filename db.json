@@ -1,0 +1,28 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$100000$WVfoKlgfZ8N2$P6qAn7z4KuUCkiLpAgR9zCq86TBp+UEX9OC2gvIgtXc=",
+        "last_login": "2018-01-19T18:41:07.476Z",
+        "is_superuser": true,
+        "username": "kaijoy",
+        "first_name": "",
+        "last_name": "",
+        "email": "kaiforward123@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2018-01-19T18:40:43.982Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "45qukmg1y39dzg7fz501inukdyf7xox4",
+    "fields": {
+        "session_data": "MGI0MzEzNTA1YTM3ZWRkYjRjYzlhN2ExN2I0ODBkOWZhOGY0MGI2OTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NTljY2FjZGFkNjVhNWY5ZGJkYzZjMDUwMzY4OWE2ODJjNGM3NjNkIn0=",
+        "expire_date": "2018-02-02T18:41:07.483Z"
+    }
+}
+]
