@@ -8,4 +8,4 @@ def nav_homepage(request):
 	"""
     Return Categories for use by Navbar
     """
-	return {'navbar_content': get_object_or_404(NavbarImage)}
+	return {'navbar_content': NavbarImage.objects.all()[0]}

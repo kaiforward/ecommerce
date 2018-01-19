@@ -15,16 +15,16 @@ class NavbarImage(models.Model):
 
 class HomeCarousel(models.Model):
 
-	category = models.OneToOneField(Category, on_delete=models.CASCADE, primary_key=True)
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return "Image Slideshow"
 
 class HomeFeature(models.Model):
 
-	product_one = models.OneToOneField(Product, on_delete=models.CASCADE, primary_key=True)
-	product_two = models.OneToOneField(Product, on_delete=models.CASCADE, primary_key=True, related_name='product_two')
-	product_three = models.OneToOneField(Product, on_delete=models.CASCADE, primary_key=True, related_name='product_three')
+	product_one = models.ForeignKey(Product, on_delete=models.CASCADE)
+	product_two = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_two')
+	product_three = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='product_three')
 
 	def __str__(self):
 		return "3 Featured Products"
