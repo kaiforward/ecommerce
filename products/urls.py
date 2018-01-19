@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
 
-	path('all(<category_pk>)/', views.products_view, name='productsall'),
+	path('all/(<category_pk>)/', views.products_view, name='productsall'),
 	# confused slightly using new 2.0 pathing, i think this is correct.
 	path('detail/(<product_pk>)/', views.product_detail_view, name='productdetail'),
 

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'blog',
+    'cart',
     'sorl.thumbnail',
 ]
 
@@ -142,3 +143,5 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': '100%',
     'height': 300,
 }
+
+CART_SESSION_ID = 'cart'

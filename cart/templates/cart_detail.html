@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+	<h3>Your Shopping Cart</h3>
+<div class="colcontainer">
+	<table class="cart" style="width: 100%">
+		<thead>
+			<tr>
+				<th> Image </th>
+				<th> Product </th>
+				<th> Quantity </th>
+				<th> Remove </th>
+				<th> Unit price </th>
+				<th> Price </th>					
+			</tr>
+		</thead>
+	
+	<tbody>
+		{% for item in cart %}
+			{% with product=item.product %}
+				<tr>
+					<td>
+						<a href="{% url 'productdetail' product.pk %}">
+							{% for photo in product.image_set.all %}
+								{% if forloop.first %} 
+									<img class="myimg" src="/media/{{ photo.image }}">
+								{% endif %} 	
+							{% endfor %} 
+						</a>
+					</td>
+					<td> {{ product.name }} </td>
+					<td>
+						<form action="{% url 'cart_add' product.pk %}" method="post">
+<!-- 							{{ item.quantity }}
+							<select id="quantity" type="submit" name="quantity" value="{{item.quantity}}">
+								{% for stock in range %}
+									<option> {{ forloop.counter }} </option>
+								{% endfor %}
+							</select> -->
+							{{ item.update_quantity_form.quantity }}
+							{{ item.update_quantity_form.update }}
+							<input type="submit" value="Update">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td><a href="{% url 'cart_remove' product.pk %}">Remove</a></td>
+					<td class="num">{{ item.price }}</td>
+					<td class="num">{{ item.total_price }}</td>
+				</tr>
+			{% endwith %}
+		{% endfor %}
+	</tbody>
+	</table>
+</div>
+{% endblock %}

@@ -45,10 +45,6 @@
 				<p class="productinfobox">Stock Available:</p>
 				<p class="productinfobox">{{ product.stock }}</p>
 			</div>
-			<div class="infowrap">
-				<p class="productinfobox">Quantity:</p>
-				<p class="productinfobox">{{ product.quantity }}</p>
-			</div>
 			<div class="colcontainer">
 			{% if product.variant %}
 				{{ product.variant }}				
@@ -78,6 +74,11 @@
 				</select>		
 			{% endif %}
 			</div>
+			<form action="{% url 'cart_add' product.pk %}" method="post">
+				{{ cart_product_form }}
+				{% csrf_token %}
+				<input type="submit" name="" value="Add To Cart">
+			</form>
 		</div>
 	</div>
 </div>

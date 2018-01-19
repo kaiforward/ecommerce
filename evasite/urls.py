@@ -22,8 +22,9 @@ from django.conf import settings
 urlpatterns = [
 
 	path('', include('home.urls')),	
+    path('cart/', include('cart.urls')),
 	path('products/', include('products.urls')),
-    path('blog/', include('blog.urls')),
+    path('blog/', include('blog.urls')),  
 	path('tinymce/', include('tinymce.urls')),
 
 	# Old url style
