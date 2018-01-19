@@ -23,7 +23,7 @@ class Product(models.Model):
 	name = models.CharField(max_length=50)
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	description = tinymce_models.HTMLField()
-	price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+	price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
 	stock = models.IntegerField(default=0)
 	quantity = models.IntegerField(default=0)
 	variant = models.ForeignKey(ProductVariant, blank=True, null=True, on_delete=models.PROTECT)
