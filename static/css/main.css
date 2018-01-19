@@ -12,7 +12,7 @@ hr {
 	border-top: 2px solid #dcdcdc;
 }
 .hr {
-	height: 50px;
+	height: 25px;
 }
 
 body {
@@ -140,10 +140,13 @@ body {
 	width:49%;
 }
 .productbox {
-	width: 49%;
+	width: 99%;
 }
 .productinfo {
-	padding: 10px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 25px 50px;
 }
 .infowrap {
 	display: flex;
@@ -152,7 +155,12 @@ body {
 	align-items: center;
 }
 .productinfobox {
-	width: 49:99%;
+	width: 100%;
+}
+.productfocusimg {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
 }
 .featurewrapper {
 	cursor: pointer;
@@ -244,6 +252,51 @@ body {
 #isntmobile {
 	display: none;
 }
+.myform {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+.myform select {
+	margin-right: 5px;
+	padding: 7px;
+	background-color: #eeeeee;
+	border: solid white 2px;
+	border-radius: 5px;
+}
+.myform input {
+	margin-right: 5px;
+	padding: 5px;
+	background-color: #eeeeee;
+	border: solid white 2px;
+	border-radius: 5px;
+}
+.cartbutton {
+	padding: 5px;
+	background-color: #eeeeee;
+	border: solid white 2px;
+	border-radius: 5px;
+}
+.mycart {
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.cartrowcol {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 20px;
+}
+.cartimg {
+	width: 250px;
+	height: 200px;
+	object-fit: cover;
+}
 
 @media only screen and (min-width: 575px) {
 
@@ -282,6 +335,9 @@ body {
 	#isntmobile {
 		display: block;
 	}
+	.mycart {
+		width: 70%;
+	}
 
 }
 
@@ -302,7 +358,18 @@ body {
 	.featureimg {
 		height: 300px;
 	}
-
+	.productbox {
+		width: 49.99%;
+	}
+	.cartrowcol {
+		display: flex;
+		flex-direction: column;
+	}
+	.mycart {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }
 
 @media only screen and (min-width: 1200px) {

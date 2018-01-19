@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load static %}
-{% load thumbnail %}
 
 {% block content %}
 
@@ -18,7 +17,7 @@
 				{% for photo in product.photo_set.all %}
 					<!-- for the carousel to work we use if statement to add active class to first item only -->
 					<div class="carousel-item {% if forloop.first %} active{% endif %}">
-				  		<img class="d-block myimg" src="/media/{{ photo.image }}">
+				  		<img class="d-block productfocusimg" src="/media/{{ photo.image }}">
 					</div>		
 				{% endfor %}
 			</div>
@@ -74,7 +73,7 @@
 				</select>		
 			{% endif %}
 			</div>
-			<form action="{% url 'cart_add' product.pk %}" method="post">
+			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 				{{ cart_product_form }}
 				{% csrf_token %}
 				<input type="submit" name="" value="Add To Cart">

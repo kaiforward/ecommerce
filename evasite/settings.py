@@ -38,12 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',
-    'easy_thumbnails',
+    # 'easy_thumbnails',
     'home',
     'products',
     'blog',
     'cart',
-    'sorl.thumbnail',
+    # 'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [

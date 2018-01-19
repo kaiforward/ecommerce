@@ -2,56 +2,73 @@
 {% load static %}
 
 {% block content %}
-
-	<h3>Your Shopping Cart</h3>
-<div class="colcontainer">
-	<table class="cart" style="width: 100%">
-		<thead>
-			<tr>
-				<th> Image </th>
-				<th> Product </th>
-				<th> Quantity </th>
-				<th> Remove </th>
-				<th> Unit price </th>
-				<th> Price </th>					
-			</tr>
-		</thead>
 	
-	<tbody>
+{% if cart %}
+
+<div class="hr"></div>
+<h3>Your Cart</h3>
+<div class="hr"></div>
+<div class="colcontainer">
+
+	<div class="colcontainer">
 		{% for item in cart %}
-			{% with product=item.product %}
-				<tr>
-					<td>
-						<a href="{% url 'productdetail' product.pk %}">
-							{% for photo in product.image_set.all %}
-								{% if forloop.first %} 
-									<img class="myimg" src="/media/{{ photo.image }}">
-								{% endif %} 	
-							{% endfor %} 
-						</a>
-					</td>
-					<td> {{ product.name }} </td>
-					<td>
-						<form action="{% url 'cart_add' product.pk %}" method="post">
-<!-- 							{{ item.quantity }}
-							<select id="quantity" type="submit" name="quantity" value="{{item.quantity}}">
-								{% for stock in range %}
-									<option> {{ forloop.counter }} </option>
-								{% endfor %}
-							</select> -->
+			{% with product=item.product %}		
+				<div class="mycart">
+					<div class="cartrowcol">
+						<div>
+							<a href="{% url 'productdetail' product.pk %}">
+								{% for photo in product.photo_set.all %}
+									{% if forloop.first %} 
+										<img class="cartimg" src="/media/{{ photo.image }}">
+									{% endif %} 	
+								{% endfor %} 
+							</a>						
+						</div>
+					</div>
+					<div class="cartrowcol">
+						<div>Product</div>
+						<div>
+							{{ product.name }}
+						</div>
+					</div>
+					<div class="cartrowcol">
+						<div>Unit Price</div>
+						<div>
+							{{ item.price }}
+						</div>
+					</div>
+					<div class="cartrowcol">
+					<div>Quantity</div>
+					<div>
+						<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 							{{ item.update_quantity_form.quantity }}
 							{{ item.update_quantity_form.update }}
-							<input type="submit" value="Update">
+							<input type="submit" value="Change">
 							{% csrf_token %}
 						</form>
-					</td>
-					<td><a href="{% url 'cart_remove' product.pk %}">Remove</a></td>
-					<td class="num">{{ item.price }}</td>
-					<td class="num">{{ item.total_price }}</td>
-				</tr>
+					</div>
+					</div>
+					<div class="cartrowcol">
+						<div>Remove</div>
+						<div class="cartbutton">
+							<a class="" href="{% url 'cart_remove' product.pk %}">Remove</a>
+						</div>
+					</div>
+					<div class="cartrowcol">
+						<div>Price</div>
+						<div>
+							{{ item.total_price }}
+						</div>	
+					</div>
+				</div>
 			{% endwith %}
 		{% endfor %}
-	</tbody>
-	</table>
-</div>
+	</div>
+
+{% else %}
+<div class="hr"></div>
+<h3> It looks like your cart is empty </h3>
+<div class="hr"></div>
+{% endif %}
+<div class="hr"></div>
 {% endblock %}
