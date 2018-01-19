@@ -21,8 +21,486 @@
     "model": "sessions.session",
     "pk": "45qukmg1y39dzg7fz501inukdyf7xox4",
     "fields": {
-        "session_data": "MGI0MzEzNTA1YTM3ZWRkYjRjYzlhN2ExN2I0ODBkOWZhOGY0MGI2OTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NTljY2FjZGFkNjVhNWY5ZGJkYzZjMDUwMzY4OWE2ODJjNGM3NjNkIn0=",
-        "expire_date": "2018-02-02T18:41:07.483Z"
+        "session_data": "YTUyNjBiYjczMzUzNDYxMmFhMGQxZGE2NmI3YmY1M2NmMWZlYmQ2Mjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NTljY2FjZGFkNjVhNWY5ZGJkYzZjMDUwMzY4OWE2ODJjNGM3NjNkIiwiY2FydCI6e319",
+        "expire_date": "2018-02-02T19:19:43.168Z"
+    }
+},
+{
+    "model": "home.navbarimage",
+    "pk": 1,
+    "fields": {
+        "headline": "Eva Brudenell",
+        "image": "navigation/photo_LeaMHkg.jpg"
+    }
+},
+{
+    "model": "home.homecarousel",
+    "pk": 1,
+    "fields": {
+        "category": 1
+    }
+},
+{
+    "model": "home.homefeature",
+    "pk": 1,
+    "fields": {
+        "product_one": 1,
+        "product_two": 2,
+        "product_three": 3
+    }
+},
+{
+    "model": "home.about",
+    "pk": 1,
+    "fields": {
+        "headline": "About Us",
+        "content": "<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Vivamus congue facilisis finibus. Proin convallis velit nibh, consequat pretium dolor vulputate vel. Quisque sit amet ultricies metus. Proin eleifend vel elit ac pulvinar. Nullam mollis massa a purus porta, sed lacinia est tincidunt. Aliquam vel arcu dignissim, porta nunc in, vehicula dui. Aenean interdum ante nibh, a tempus elit sagittis in. Quisque at enim mauris. Donec et ex pulvinar, pharetra elit sit amet, dictum dui. Nunc elit felis, laoreet at nunc in, rhoncus pellentesque nisl. Maecenas malesuada auctor tortor, ac aliquam quam commodo id. Vestibulum eu elementum est. Donec fringilla pharetra gravida. Nullam in ligula vel magna finibus vehicula. Donec in vehicula magna.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Duis ultricies urna et bibendum egestas. Ut luctus nunc ut ipsum pretium varius. Fusce sagittis mi ac arcu sollicitudin, nec ultricies lorem vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In velit neque, hendrerit nec purus sed, auctor cursus risus. Sed non cursus nunc, sit amet tincidunt enim. Sed molestie massa quis nunc accumsan, ut vehicula nibh porttitor. Nulla condimentum vestibulum scelerisque. Nunc nec tellus at lacus vulputate efficitur vel eu magna. Sed ut nibh nec dolor viverra varius. Nullam ante nisi, faucibus eu volutpat sit amet, mattis sed ligula. Fusce rutrum semper nisi, in hendrerit metus. Suspendisse aliquam malesuada tellus eu congue.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Nunc pulvinar, mi at iaculis porttitor, nisi tellus iaculis diam, eu pellentesque magna lorem quis est. Nullam mauris quam, efficitur eget quam non, luctus interdum lorem. Maecenas efficitur luctus mattis. Mauris posuere lacus nec nisl vestibulum, consequat sollicitudin purus lobortis. Sed efficitur tortor eget nisi vehicula vestibulum. Praesent efficitur erat vel dui posuere, feugiat pellentesque magna euismod. Ut metus sapien, suscipit vitae tempor accumsan, euismod in est. Nam quis hendrerit nisl, non finibus mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in ultricies purus. Praesent semper pellentesque ligula a lacinia. Donec vestibulum, ex fermentum molestie tincidunt, nibh enim fringilla est, eu semper mi nulla eu nunc. Etiam et fermentum nunc. Sed eu erat eu dolor molestie eleifend eu et lacus. Sed vitae dolor sapien. Quisque massa elit, fringilla eu dolor quis, iaculis rhoncus sem.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Duis commodo augue quis purus cursus, quis tincidunt odio imperdiet. Sed nibh dolor, finibus ut maximus nec, volutpat in lacus. Praesent sollicitudin rhoncus congue. Nulla gravida elit justo, id pellentesque libero sollicitudin eget. Etiam bibendum accumsan tincidunt. Phasellus vel auctor nisl, at blandit nibh. Fusce et placerat arcu, vel viverra sem. Ut tincidunt fermentum commodo. Nam a sapien finibus, consequat est in, pharetra diam. Quisque euismod dictum tellus, quis porttitor quam pharetra id. Donec tincidunt finibus lectus, quis consequat nunc vehicula nec. Cras at nunc eget risus dignissim vulputate nec a ipsum. Vestibulum ultricies dapibus velit ac dignissim. Morbi ornare urna quis ligula viverra, vel commodo elit lacinia.</p>"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "Category 1",
+        "image": "productimages/obects1.jpg",
+        "description": "<p>This is the first category description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points!</li>\r\n</ul>"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "Category 2",
+        "image": "productimages/img3.jpg",
+        "description": "<p>Category 2 description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "Category 3",
+        "image": "productimages/img1.jpg",
+        "description": "<p>Category 2 description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>"
+    }
+},
+{
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "Category 4",
+        "image": "productimages/img5.jpg",
+        "description": "<p>Category 2 description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>"
+    }
+},
+{
+    "model": "products.productvariant",
+    "pk": 1,
+    "fields": {
+        "variant_name": "Sizes"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "name": "Product 1",
+        "category": 1,
+        "description": "<p>Product Description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>",
+        "price": "5",
+        "stock": 8,
+        "quantity": 0,
+        "variant": 1,
+        "variant_two": null,
+        "variant_three": null
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "name": "Product 2",
+        "category": 1,
+        "description": "<p>Category 2 description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>",
+        "price": "9",
+        "stock": 13,
+        "quantity": 0,
+        "variant": 1,
+        "variant_two": null,
+        "variant_three": null
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "name": "Product 3",
+        "category": 1,
+        "description": "<p>Category 2 description</p>\r\n<ul>\r\n<li>and</li>\r\n<li>some</li>\r\n<li>bullet</li>\r\n<li>points</li>\r\n</ul>",
+        "price": "15",
+        "stock": 12,
+        "quantity": 0,
+        "variant": 1,
+        "variant_two": null,
+        "variant_three": null
+    }
+},
+{
+    "model": "products.productattribute",
+    "pk": 1,
+    "fields": {
+        "product_variant": 1,
+        "attribute": "Small"
+    }
+},
+{
+    "model": "products.productattribute",
+    "pk": 2,
+    "fields": {
+        "product_variant": 1,
+        "attribute": "Medium"
+    }
+},
+{
+    "model": "products.productattribute",
+    "pk": 3,
+    "fields": {
+        "product_variant": 1,
+        "attribute": "Large"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 1,
+    "fields": {
+        "product": 1,
+        "image": "productimages/outside-of-campinas.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 2,
+    "fields": {
+        "product": 1,
+        "image": "productimages/photo.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 3,
+    "fields": {
+        "product": 1,
+        "image": "productimages/objects2.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 4,
+    "fields": {
+        "product": 2,
+        "image": "productimages/img7.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 5,
+    "fields": {
+        "product": 2,
+        "image": "productimages/img6.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 6,
+    "fields": {
+        "product": 2,
+        "image": "productimages/button3.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 7,
+    "fields": {
+        "product": 3,
+        "image": "productimages/objects6.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 8,
+    "fields": {
+        "product": 3,
+        "image": "productimages/objects5.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 9,
+    "fields": {
+        "product": 3,
+        "image": "productimages/objects4.jpg"
+    }
+},
+{
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+        "headline": "Community Event!",
+        "image": "productimages/moss.jpg",
+        "description": "<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Nunc pulvinar, mi at iaculis porttitor, nisi tellus iaculis diam, eu pellentesque magna lorem quis est. Nullam mauris quam, efficitur eget quam non, luctus interdum lorem. Maecenas efficitur luctus mattis. Mauris posuere lacus nec nisl vestibulum, consequat sollicitudin purus lobortis. Sed efficitur tortor eget nisi vehicula vestibulum. Praesent efficitur erat vel dui posuere, feugiat pellentesque magna euismod. Ut metus sapien, suscipit vitae tempor accumsan, euismod in est. Nam quis hendrerit nisl, non finibus mauris. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed in ultricies purus. Praesent semper pellentesque ligula a lacinia. Donec vestibulum, ex fermentum molestie tincidunt, nibh enim fringilla est, eu semper mi nulla eu nunc. Etiam et fermentum nunc. Sed eu erat eu dolor molestie eleifend eu et lacus. Sed vitae dolor sapien. Quisque massa elit, fringilla eu dolor quis, iaculis rhoncus sem.</p>\r\n<p style=\"margin: 0px 0px 15px; padding: 0px; text-align: justify; font-family: 'Open Sans', Arial, sans-serif; font-size: 14px;\">Duis commodo augue quis purus cursus, quis tincidunt odio imperdiet. Sed nibh dolor, finibus ut maximus nec, volutpat in lacus. Praesent sollicitudin rhoncus congue. Nulla gravida elit justo, id pellentesque libero sollicitudin eget. Etiam bibendum accumsan tincidunt. Phasellus vel auctor nisl, at blandit nibh. Fusce et placerat arcu, vel viverra sem. Ut tincidunt fermentum commodo. Nam a sapien finibus, consequat est in, pharetra diam. Quisque euismod dictum tellus, quis porttitor quam pharetra id. Donec tincidunt finibus lectus, quis consequat nunc vehicula nec. Cras at nunc eget risus dignissim vulputate nec a ipsum. Vestibulum ultricies dapibus velit ac dignissim. Morbi ornare urna quis ligula viverra, vel commodo elit lacinia.</p>",
+        "date": "2018-01-19T19:17:35.274Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2018-01-19T19:11:21.281Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Category 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2018-01-19T19:12:01.156Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Category 2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2018-01-19T19:12:15.223Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "Category 3",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2018-01-19T19:12:25.601Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "category"
+        ],
+        "object_id": "4",
+        "object_repr": "Category 4",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2018-01-19T19:12:46.192Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "productvariant"
+        ],
+        "object_id": "1",
+        "object_repr": "Sizes",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"product attribute\", \"object\": \"ProductAttribute object (1)\"}}, {\"added\": {\"name\": \"product attribute\", \"object\": \"ProductAttribute object (2)\"}}, {\"added\": {\"name\": \"product attribute\", \"object\": \"ProductAttribute object (3)\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2018-01-19T19:13:48.735Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "product"
+        ],
+        "object_id": "1",
+        "object_repr": "Product 1 - Category 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 1\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 1\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 1\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2018-01-19T19:14:12.678Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "product"
+        ],
+        "object_id": "2",
+        "object_repr": "Product 2 - Category 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 2\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 2\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 2\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2018-01-19T19:14:42.589Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "product"
+        ],
+        "object_id": "3",
+        "object_repr": "Product 3 - Category 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 3\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 3\"}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 3\"}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2018-01-19T19:15:40.986Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "about"
+        ],
+        "object_id": "1",
+        "object_repr": "About object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2018-01-19T19:15:52.792Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "homecarousel"
+        ],
+        "object_id": "1",
+        "object_repr": "Image Slideshow",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2018-01-19T19:16:09.031Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "homefeature"
+        ],
+        "object_id": "1",
+        "object_repr": "3 Featured Products",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2018-01-19T19:16:28.405Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "navbarimage"
+        ],
+        "object_id": "1",
+        "object_repr": "Header Title and Image",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2018-01-19T19:17:35.275Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "blog",
+            "blog"
+        ],
+        "object_id": "1",
+        "object_repr": "Community Event!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2018-01-19T19:21:03.955Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "navbarimage"
+        ],
+        "object_id": "1",
+        "object_repr": "Header Title and Image",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image\"]}}]"
     }
 }
 ]
