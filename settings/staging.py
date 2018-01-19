@@ -9,8 +9,8 @@ DATABASES = {
     'default': dj_database_url.config('CLEARDB_DATABASE_URL')
 }
 
-SITE_URL = 'https://the-galactic-index.herokuapp.com'
-ALLOWED_HOSTS.append('the-galactic-index.herokuapp.com')
+SITE_URL = 'https://evabrudenell.herokuapp.com/'
+ALLOWED_HOSTS.append('https://evabrudenell.herokuapp.com/')
  
 # Log DEBUG information to the console
 LOGGING = {
