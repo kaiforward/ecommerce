@@ -1,1 +1,1 @@
-web: gunicorn evasite.wsgi:application
+web: gunicorn evasite.wsgi:application --preload --workers 1
