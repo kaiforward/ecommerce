@@ -1,2 +1,2 @@
-web: gunicorn evasite.wsgi --log-file -
+web: gunicorn evasite.wsgi:application
 worker: python worker.py
