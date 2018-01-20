@@ -44,34 +44,38 @@
 				<p class="productinfobox">Stock Available:</p>
 				<p class="productinfobox">{{ product.stock }}</p>
 			</div>
-			<div class="colcontainer">
-			{% if product.variant %}
-				{{ product.variant }}				
-				<select class="myselect" name="variantlist" form="form">
-					<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-					{% for attribute in product.variant.productattribute_set.all %}
-						<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-		  			{% endfor %}
-				</select>		
-			{% endif %}
-			{% if product.variant_two %}
-				{{ product.variant_two }}				
-				<select class="myselect" name="variantlist" form="form">
-					<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-					{% for attribute in product.variant_two.productattribute_set.all %}
-						<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-		  			{% endfor %}
-				</select>		
-			{% endif %}
-			{% if product.variant_three %}
-				{{ product.variant_three }}				
-				<select class="myselect" name="variantlist" form="form">
-					<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-					{% for attribute in product.variant_three.productattribute_set.all %}
-						<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-		  			{% endfor %}
-				</select>		
-			{% endif %}
+			<div class="infowrap">
+				{% if product.variant %}
+					{{ product.variant }}				
+					<select class="myselect" name="variantlist" form="form">
+						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
+						{% for attribute in product.variant.productattribute_set.all %}
+							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
+			  			{% endfor %}
+					</select>		
+				{% endif %}
+			</div>
+			<div class="infowrap">
+				{% if product.variant_two %}
+					{{ product.variant_two }}				
+					<select class="myselect" name="variantlist" form="form">
+						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
+						{% for attribute in product.variant_two.productattribute_set.all %}
+							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
+			  			{% endfor %}
+					</select>		
+				{% endif %}
+			</div>
+			<div class="infowrap">
+				{% if product.variant_three %}
+					{{ product.variant_three }}				
+					<select class="myselect" name="variantlist" form="form">
+						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
+						{% for attribute in product.variant_three.productattribute_set.all %}
+							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
+			  			{% endfor %}
+					</select>		
+				{% endif %}
 			</div>
 			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 				{{ cart_product_form }}

@@ -61,8 +61,8 @@ body {
 }
 
 .pagecontainer {
-	background-color:#eeeeee;
 	width: 100%;
+	background-color:#eeeeee;
 	padding: 0px 10px;
 }
 .contentcontainer {
@@ -154,9 +154,9 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
-.productinfobox {
+/*.productinfobox {
 	width: 100%;
-}
+}*/
 .productfocusimg {
 	width: 100%;
 	height: 400px;
@@ -255,7 +255,7 @@ body {
 .myform {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 }
 .myform select {
@@ -282,7 +282,7 @@ body {
 	width: 95%;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 }
 .cartrowcol {
 	width: 100%;

@@ -21,8 +21,8 @@
     "model": "sessions.session",
     "pk": "45qukmg1y39dzg7fz501inukdyf7xox4",
     "fields": {
-        "session_data": "YTUyNjBiYjczMzUzNDYxMmFhMGQxZGE2NmI3YmY1M2NmMWZlYmQ2Mjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NTljY2FjZGFkNjVhNWY5ZGJkYzZjMDUwMzY4OWE2ODJjNGM3NjNkIiwiY2FydCI6e319",
-        "expire_date": "2018-02-02T19:19:43.168Z"
+        "session_data": "NGFmYzVlY2FhZDAwNWMxODA2NzRmZWMzMTlhNjFlYWJiZmM0NGU1OTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4NTljY2FjZGFkNjVhNWY5ZGJkYzZjMDUwMzY4OWE2ODJjNGM3NjNkIiwiY2FydCI6eyIxIjp7InF1YW50aXR5IjoyLCJwcmljZSI6IjUifSwiMyI6eyJxdWFudGl0eSI6MSwicHJpY2UiOiIxNSJ9LCI0Ijp7InF1YW50aXR5IjoxLCJwcmljZSI6IjgifSwiMiI6eyJxdWFudGl0eSI6NCwicHJpY2UiOiI5In19fQ==",
+        "expire_date": "2018-02-03T00:23:29.361Z"
     }
 },
 {
@@ -30,7 +30,7 @@
     "pk": 1,
     "fields": {
         "headline": "Eva Brudenell",
-        "image": "navigation/photo_LeaMHkg.jpg"
+        "image": "navigation/photo_t4rlLE2.jpg"
     }
 },
 {
@@ -146,6 +146,21 @@
     }
 },
 {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "name": "Product 4",
+        "category": 1,
+        "description": "<p>desc</p>",
+        "price": "8",
+        "stock": 12,
+        "quantity": 0,
+        "variant": null,
+        "variant_two": null,
+        "variant_three": null
+    }
+},
+{
     "model": "products.productattribute",
     "pk": 1,
     "fields": {
@@ -174,7 +189,7 @@
     "pk": 1,
     "fields": {
         "product": 1,
-        "image": "productimages/outside-of-campinas.jpg"
+        "image": "productimages/photo2.jpg"
     }
 },
 {
@@ -239,6 +254,14 @@
     "fields": {
         "product": 3,
         "image": "productimages/objects4.jpg"
+    }
+},
+{
+    "model": "products.photo",
+    "pk": 10,
+    "fields": {
+        "product": 4,
+        "image": "productimages/objects3.jpg"
     }
 },
 {
@@ -501,6 +524,78 @@
         "object_repr": "Header Title and Image",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2018-01-19T23:39:49.004Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "navbarimage"
+        ],
+        "object_id": "1",
+        "object_repr": "Header Title and Image",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2018-01-19T23:40:26.513Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "product"
+        ],
+        "object_id": "1",
+        "object_repr": "Product 1 - Category 1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"name\": \"photo\", \"object\": \"Product 1\", \"fields\": [\"image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2018-01-19T23:43:48.832Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "home",
+            "navbarimage"
+        ],
+        "object_id": "1",
+        "object_repr": "Header Title and Image",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"image\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2018-01-20T00:10:28.841Z",
+        "user": [
+            "kaijoy"
+        ],
+        "content_type": [
+            "products",
+            "product"
+        ],
+        "object_id": "4",
+        "object_repr": "Product 4 - Category 1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"photo\", \"object\": \"Product 4\"}}]"
     }
 }
 ]
