@@ -17,6 +17,7 @@ hr {
 
 body {
 	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
 }
 
 .link {
@@ -137,22 +138,37 @@ body {
 	padding-right: 0.5em;
 }
 .productwrapper {
+	justify-content: flex-start;
 	width:49%;
 }
 .productbox {
 	width: 99%;
 }
 .productinfo {
+	margin-left: 10px;
+	padding-top: 10px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	padding: 25px 50px;
+}
+.productdetailinfo {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 .infowrap {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 10px;
+}
+.infowrap p{
+	margin-bottom: 0px;
 }
 /*.productinfobox {
 	width: 100%;
@@ -198,7 +214,7 @@ body {
 }
 .categorytext {
 	width: 100%;
-	font-size: 1em;
+	font-size: 1.5em;
 	color: #212529;
 	z-index: 1;
 	text-align: center;
@@ -238,8 +254,10 @@ body {
 }
 
 .myselect {
+	padding: 5px;
 	background-color: #eeeeee;
-	border: unset;
+	border: solid white 2px;
+	border-radius: 5px;
 }
 .myfooter {
 	justify-content: space-between;
@@ -255,18 +273,19 @@ body {
 .myform {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 	align-items: center;
 }
 .myform select {
-	margin-right: 5px;
+	margin-left:10px;
 	padding: 7px;
 	background-color: #eeeeee;
 	border: solid white 2px;
 	border-radius: 5px;
 }
 .myform input {
-	margin-right: 5px;
+	margin-left:10px;
 	padding: 5px;
 	background-color: #eeeeee;
 	border: solid white 2px;
@@ -299,7 +318,9 @@ body {
 }
 
 @media only screen and (min-width: 575px) {
-
+	body {
+		font-size: 18px;
+	}
 	.headerwrap {
 		justify-content: flex-start;
 	}
@@ -338,10 +359,14 @@ body {
 	.mycart {
 		width: 70%;
 	}
-
 }
 
 @media only screen and (min-width: 767px) {
+	.productdetailinfo {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}	
 	.myfooter {
 		justify-content: space-between;
 		width: 70%;
@@ -402,7 +427,11 @@ body {
 		-moz-transition: opacity 0.2s;
 		color: white;
 	}
-
+	.productdetailinfo {
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
 }	
 
 /*----------------------------*/

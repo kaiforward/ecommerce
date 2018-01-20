@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block title %}Home{% endblock %}
+
 {% block content %}
 
 <div id="hompagecarousel" class="carousel mycarousel slide" data-ride="carousel" style="width:100%;">
@@ -62,7 +64,7 @@
 	{% for photo in featured_products.product_one.photo_set.all %}
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_one.pk %}'">
-					<div class="abs imagetextdark">{{ featured_products.product_one.name }}</div>
+					<h3 class="abs productinfo">{{ featured_products.product_one.name }}</h3>
 					<img  class="featureimg" src="/media/{{ photo.image }}">
 				</a>
 			{% endif %}
@@ -70,7 +72,7 @@
 	{% for photo in featured_products.product_two.photo_set.all %}
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_two.pk %}'">
-					<div class="abs imagetextdark">{{ featured_products.product_two.name }}</div>
+					<h3 class="abs productinfo">{{ featured_products.product_two.name }}</h3>
 					<img class="featureimg" src="/media/{{ photo.image }}">
 				</a>
 			{% endif %}
@@ -78,7 +80,7 @@
 	{% for photo in featured_products.product_three.photo_set.all %}
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_three.pk %}'">
-					<div class="abs imagetextdark">{{ featured_products.product_three.name }}</div>
+					<h3 class="abs productinfo">{{ featured_products.product_three.name }}</h3>
 					<img class="featureimg" src="/media/{{ photo.image }}">
 				</a>
 			{% endif %}

@@ -3,4 +3,3 @@ media/cache/*/*
 media/cache/*/*/*
 media/images/*
 settings/dev.py
-evasite/settings.py

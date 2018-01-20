@@ -30,7 +30,7 @@
 		</div>
 	</div>	
 	<div class="productbox">
-		<div class="productinfo">
+		<div class="productdetailinfo">
 			<h3>{{ product.name }}</h3>
 			<!-- use safe tag for description as admin users only will input product descriptions. Allows html rendering from tinyMCE -->
 			<div>
@@ -43,40 +43,42 @@
 			<div class="infowrap">
 				<p class="productinfobox">Stock Available:</p>
 				<p class="productinfobox">{{ product.stock }}</p>
-			</div>
-			<div class="infowrap">
-				{% if product.variant %}
+			</div>	
+			{% if product.variant %}
+				<div class="infowrap">
 					{{ product.variant }}				
 					<select class="myselect" name="variantlist" form="form">
 						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
 						{% for attribute in product.variant.productattribute_set.all %}
 							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
 			  			{% endfor %}
-					</select>		
-				{% endif %}
-			</div>
-			<div class="infowrap">
-				{% if product.variant_two %}
+					</select>	
+				</div>		
+			{% endif %}
+					
+			{% if product.variant_two %}
+				<div class="infowrap">
 					{{ product.variant_two }}				
 					<select class="myselect" name="variantlist" form="form">
 						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
 						{% for attribute in product.variant_two.productattribute_set.all %}
 							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
 			  			{% endfor %}
-					</select>		
-				{% endif %}
-			</div>
-			<div class="infowrap">
-				{% if product.variant_three %}
+					</select>
+				</div>			
+			{% endif %}
+
+			{% if product.variant_three %}
+				<div class="infowrap">
 					{{ product.variant_three }}				
 					<select class="myselect" name="variantlist" form="form">
 						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
 						{% for attribute in product.variant_three.productattribute_set.all %}
 							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
 			  			{% endfor %}
-					</select>		
-				{% endif %}
-			</div>
+					</select>
+					</div>		
+			{% endif %}		
 			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 				{{ cart_product_form }}
 				{% csrf_token %}
