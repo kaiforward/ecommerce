@@ -5,8 +5,7 @@
 
 {% for post in blog_info %}
 <div class="hr"></div>
-<h3>{{ post.headline }}</h3><p>{{ post.date }}</p>
-<div class="rowcolcontainer">
+<div class="prodrowcolcontainer">
 	<div class="productbox">
 		<div class="colcontainer">		
 			<div class="rowcolcontainer">
@@ -18,6 +17,7 @@
 	</div>
 	<div class="productbox">
 		<div class="colcontainer padding">
+			<h3>{{ post.headline }}</h3><p>{{ post.date }}</p>
 			{{ post.description|safe }}
 		</div>
 	</div>
