@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
-
+{% block title %}All Products{% endblock %}
 {% block content %}
 	<div class="rowcontainer wrap">
 	{% for product in products %}
@@ -15,10 +15,10 @@
 
 			<div class="productinfo abs imagetext">				
 				<div class="infowrap">
-					<h3>{{ product.name }}</h3>
+					<p>{{ product.name }}</p>
 				</div>
 				<div class="infowrap">
-					<h3 class="productinfobox">£{{ product.price }}</h3>
+					<p class="productinfobox">£{{ product.price }}</p>
 				</div>
 			</div>
 		</a>					

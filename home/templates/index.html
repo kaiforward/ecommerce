@@ -105,7 +105,7 @@
 <div class="hr"></div>
 
 {% for post in blogs %}
-	<h3>{{ post.headline }}</h3>
+	<h3>{{ post.headline }} {{ post.date }}</h3>
 	<div class="colcontainer">		
 		<div class="rowcolcontainer">
 			{% if post.image %}
@@ -115,8 +115,8 @@
 			{% endif %}
 			<div class="productbox">
 				<div class="colcontainer padding">
-					{{ post.description|safe }}
-					{{ post.date }}
+					{{ post.description|safe|truncatewords:100 }}
+					
 				</div>
 			</div>
 		</div>

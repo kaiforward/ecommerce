@@ -1,26 +1,27 @@
 {% extends "base.html" %}
-
+{% block title %}Recent Blogs{% endblock %}
 {% load static %}
 {% block content %}
 
 {% for post in blog_info %}
 <div class="hr"></div>
-	<h3>{{ post.headline }}</h3>
-	<div class="colcontainer">		
-		<div class="rowcolcontainer">
-			{% if post.image %}
-				<div class="productbox">
-					<img src="/media/{{ post.image }}" class="featureimg" style="border-radius: 10px;">		
-				</div>
-			{% endif %}
-			<div class="productbox">
-				<div class="colcontainer padding">
-					{{ post.description|safe }}
-					{{ post.date }}
-				</div>
+<h3>{{ post.headline }}</h3><p>{{ post.date }}</p>
+<div class="rowcolcontainer">
+	<div class="productbox">
+		<div class="colcontainer">		
+			<div class="rowcolcontainer">
+				{% if post.image %}
+						<img src="/media/{{ post.image }}" class="featureimg" style="border-radius: 10px;">		
+				{% endif %}
 			</div>
 		</div>
 	</div>
+	<div class="productbox">
+		<div class="colcontainer padding">
+			{{ post.description|safe }}
+		</div>
+	</div>
+</div>	
 <div class="hr"></div>	
 {% endfor %}
 {% endblock %}
