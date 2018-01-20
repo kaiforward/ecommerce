@@ -118,6 +118,11 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+.prodrowcolcontainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
 .rowcontainer {
 	display: flex;
 	flex-direction: row;
@@ -359,9 +364,16 @@ body {
 	.mycart {
 		width: 70%;
 	}
+	.myform {
+		flex-wrap: unset;
+	}
 }
 
 @media only screen and (min-width: 767px) {
+	.prodrowcolcontainer {
+		display: flex;
+		flex-direction: row;
+	}
 	.productdetailinfo {
 		width: 80%;
 		margin-left: 10%;
