@@ -44,17 +44,7 @@
 				<p class="productinfobox">Stock Available:</p>
 				<p class="productinfobox">{{ product.stock }}</p>
 			</div>	
-			{% if product.variant %}
-				<div class="infowrap">
-					{{ product.variant }}				
-					<select class="myselect" name="variantlist" form="form">
-						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-						{% for attribute in product.variant.productattribute_set.all %}
-							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-			  			{% endfor %}
-					</select>	
-				</div>		
-			{% endif %}
+
 					
 			{% if product.variant_two %}
 				<div class="infowrap">
@@ -80,7 +70,15 @@
 					</div>		
 			{% endif %}		
 			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
-				{{ cart_product_form }}
+
+				{% if product.variant %}
+				<p> {{ product.variant }} </p>
+				{{ cart_product_form.variant }}
+				{% endif %}
+				<p>Quantity</p>
+				{{ cart_product_form.quantity }}
+				{{ variant }}
+
 				{% csrf_token %}
 				<input type="submit" name="" value="Add To Cart">
 			</form>

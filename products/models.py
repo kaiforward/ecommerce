@@ -38,6 +38,9 @@ class ProductAttribute(models.Model):
 	product_variant = models.ForeignKey(ProductVariant, blank=True, null=True, on_delete=models.CASCADE)
 	attribute = models.CharField(max_length=50)
 
+	def __str__(self):
+		return self.attribute
+
 class Photo(models.Model):
 
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)

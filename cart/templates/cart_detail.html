@@ -4,7 +4,7 @@
 {% block content %}
 	
 {% if cart %}
-
+<h3>{{ attribute.product_variant.variant_name }}</h3>
 <div class="hr"></div>
 <h3>Your Cart</h3>
 <div class="hr"></div>
@@ -12,6 +12,7 @@
 		{% for item in cart %}
 			{% with product=item.product %}		
 				<div class="mycart">
+
 					<div class="cartrowcol">
 						<div>
 							<a href="{% url 'productdetail' product.pk %}">
@@ -23,29 +24,37 @@
 							</a>						
 						</div>
 					</div>
+
 					<div class="cartrowcol">
 						<div>Product</div>
 						<div>
 							{{ product.name }}
 						</div>
 					</div>
+
 					<div class="cartrowcol">
 						<div>Unit Price</div>
 						<div>
 							{{ item.price }}
 						</div>
 					</div>
-					<div class="cartrowcol">
-					<div>Quantity</div>
-					<div>
-						<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
-							{{ item.update_quantity_form.quantity }}
-							{{ item.update_quantity_form.update }}
+					<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
+						<div class="cartrowcol">
+							<div>Quantity</div>							
+							{{ item.update_quantity_form.quantity }}		
+						</div>			
+						<div class="cartrowcol">
+							<div> {{ product.variant }} </div>
+							{{ item.update_quantity_form.variant }}	
+							{{ item.update_quantity_form.update_quantity }}
+							{{ item.update_quantity_form.update_variant }}
+						</div>
+						<div class="cartrowcol">
+							<div>Change</div>							
 							<input type="submit" value="Change">
 							{% csrf_token %}
-						</form>
-					</div>
-					</div>
+						</div>
+					</form>
 					<div class="cartrowcol">
 						<div>Remove</div>
 						<div class="cartbutton">
@@ -58,6 +67,7 @@
 							{{ item.total_price }}
 						</div>	
 					</div>
+
 				</div>
 			{% endwith %}
 		{% endfor %}

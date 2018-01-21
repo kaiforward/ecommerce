@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_POST
-from products.models import Product
+from products.models import Product, ProductAttribute, ProductVariant
 from .cart import Cart
 from .forms import CartAddProductForm
 
@@ -14,7 +14,9 @@ def cart_add(request, product_pk):
 		cd = form.cleaned_data
 		cart.add(product=product,
 				 quantity=cd['quantity'],
-				 update_quantity=cd['update']
+				 attribute=cd['variant'],
+				 update_quantity=cd['update_quantity'],
+				 update_variant=cd['update_variant'],
 				 )
 	return redirect('cart_detail')
 
@@ -27,6 +29,13 @@ def cart_remove(request, product_pk):
 def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
-		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'],
-			'update': True})
+
+		attribute = ProductAttribute.objects.filter(attribute=item['attribute'])[0]
+		
+		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
+			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
+
+		item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
+		item['update_quantity_form'].fields['variant'].attribute = attribute
+
 	return render(request, 'cart_detail.html', {'cart': cart})
