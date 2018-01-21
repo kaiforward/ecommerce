@@ -30,8 +30,6 @@ def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
 
-		choose = item.get('attribute')
-
 		attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
 		
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
