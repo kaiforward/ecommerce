@@ -65,7 +65,6 @@ class Cart(object):
 			self.cart[str(product.pk)]['product'] = product
 
 		for item in self.cart.values():
-			item['attribute'] = str(item['attribute'])
 			item['price'] = Decimal(item['price'])
 			item['total_price'] = item['price'] * item['quantity']
 			yield item
