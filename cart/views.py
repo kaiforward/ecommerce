@@ -30,9 +30,11 @@ def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
 
-		attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
-		# attribute = ProductAttribute.objects.filter(attribute=item.get('attribute'))[0]
-		
+		# attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
+		try:
+			attribute = ProductAttribute.objects.filter(attribute=item.get('attribute'))[0]
+		except:
+			attribute = item['attribute']
 
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
 			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
