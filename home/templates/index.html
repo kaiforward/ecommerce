@@ -93,7 +93,7 @@
 
 <div class="rowcontainer wrap">
 	{% for category in featured_categories %}
-		<a href="{% url 'productsall' category.pk %}" class="rel categorywrap">{{ collection }}
+		<a href="{% url 'productsall' category.pk %}" class="categorywrap">{{ collection }}
 			<img class="categoryimg" src="/media/{{ category.image }}">
 			<p class="categorytext"> {{ category.name }}</p>
 		</a>
