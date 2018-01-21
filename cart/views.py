@@ -28,19 +28,14 @@ def cart_remove(request, product_pk):
 
 def cart_detail(request):
 	cart = Cart(request)
+	# get session cart
 	for item in cart:
-
-		# attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
-		try:
-			attribute = ProductAttribute.objects.filter(attribute=item.get('attribute'))[0]
-		except:
-			attribute = item['attribute']
-
+		# Okay seems hacky.
+		# try to get product attribute
+		attribute = get_object_or_404(ProductAttribute, attribute=item['attribute'])
+		# give each item in cart a form to update the quantity or variant of the product
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
 			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
-
-		# set the query set and attribute of re-used form
+		# set the varaint queryset to use the variant associated with product attribute chosen.
 		item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
-		# item['update_quantity_form'].fields['variant'].attribute = attribute
-
 	return render(request, 'cart_detail.html', {'cart': cart})

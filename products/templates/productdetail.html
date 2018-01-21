@@ -71,16 +71,22 @@
 			{% endif %}		
 			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 
-				{% if product.variant %}
-				<p> {{ product.variant }} </p>
-				{{ cart_product_form.variant }}
-				{% endif %}
-				<p>Quantity</p>
-				{{ cart_product_form.quantity }}
-				{{ variant }}
-
+				<div class="cartrowcol">
+					{% if product.variant %}
+					<p> {{ product.variant }} </p>
+					{{ cart_product_form.variant }}
+					{% endif %}
+				</div>
+				<div class="cartrowcol">
+					<p>Quantity</p>
+					{{ cart_product_form.quantity }}
+					{{ variant }}
+				</div>
+				<div class="cartrowcol">
+				<p style="height: 28px;"></p>
 				{% csrf_token %}
 				<input type="submit" name="" value="Add To Cart">
+				</div>
 			</form>
 		</div>
 	</div>

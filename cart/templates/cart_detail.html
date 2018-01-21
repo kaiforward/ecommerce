@@ -41,16 +41,18 @@
 					<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
 						<div class="cartrowcol">
 							<div>Quantity</div>							
-							{{ item.update_quantity_form.quantity }}		
-						</div>			
+							{{ item.update_quantity_form.quantity }}
+							{{ item.update_quantity_form.update_quantity }}		
+						</div>		
+						{% if item.product.variant %}	
 						<div class="cartrowcol">
 							<div> {{ product.variant }} </div>
 							{{ item.update_quantity_form.variant }}	
-							{{ item.update_quantity_form.update_quantity }}
 							{{ item.update_quantity_form.update_variant }}
 						</div>
+						{% endif %}
 						<div class="cartrowcol">
-							<div>Change</div>							
+							<div style="height: 17px;"></div>							
 							<input type="submit" value="Change">
 							{% csrf_token %}
 						</div>
