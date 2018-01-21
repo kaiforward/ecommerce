@@ -12,7 +12,6 @@
 		{% for item in cart %}
 			{% with product=item.product %}		
 				<div class="mycart">
-
 					<div class="cartrowcol">
 						<div>
 							<a href="{% url 'productdetail' product.pk %}">
@@ -24,14 +23,12 @@
 							</a>						
 						</div>
 					</div>
-
 					<div class="cartrowcol">
 						<div class="producttitle">Product</div>
 						<div class="productdata">
 							{{ product.name }}
 						</div>
 					</div>
-
 					<div class="cartrowcol">
 						<div class="producttitle">Price</div>
 						<div class="productdata">
@@ -69,7 +66,6 @@
 							{{ item.total_price }}
 						</div>	
 					</div>
-
 				</div>
 			{% endwith %}
 		{% endfor %}
