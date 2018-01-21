@@ -29,12 +29,14 @@ def cart_remove(request, product_pk):
 def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
-
-		attribute = ProductAttribute.objects.filter(attribute=item['attribute'])[0]
+		# dis took me all night!
+		choose = item['attribute']
+		attribute = ProductAttribute.objects.filter(attribute=choose)[0]
 		
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
 			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
 
+		# set the query set and attribute of re-used form
 		item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
 		item['update_quantity_form'].fields['variant'].attribute = attribute
 
