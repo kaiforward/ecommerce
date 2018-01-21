@@ -30,7 +30,7 @@ def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
 		# dis took me all night!
-		choose = item['attribute']
+		choose = str(item['attribute'])
 		attribute = ProductAttribute.objects.filter(attribute=choose)[0]
 		
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
