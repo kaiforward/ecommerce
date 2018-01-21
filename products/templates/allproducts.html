@@ -5,8 +5,7 @@
 {% block content %}
 	<div class="rowcontainer wrap">
 	{% for product in products %}
-			<a href="{% url 'productdetail' product.pk %}" class="colcontainer rel productwrapper pointer">
-			<!-- feels reeeeeal hacky -->
+		<a href="{% url 'productdetail' product.pk %}" class="productwrapper pointer">
 			{% for photo in product.photo_set.all %}
 				{% if forloop.first %}
 					<img class="productimg" src="/media/{{ photo.image }}">
@@ -14,12 +13,8 @@
 			{% endfor %}
 
 			<div class="productinfo abs imagetext">				
-				<div class="infowrap">
-					<p>{{ product.name }}</p>
-				</div>
-				<div class="infowrap">
-					<p class="productinfobox">£{{ product.price }}</p>
-				</div>
+				<p>{{ product.name }}</p>
+				<p class="productinfobox">£{{ product.price }}</p>
 			</div>
 		</a>					
 	{% endfor %}
