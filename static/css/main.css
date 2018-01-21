@@ -37,7 +37,6 @@ body {
 }
 .dropdownlinks {
 	z-index: 10;
-	position: relative;
 	width: 100%;
 	background-color: #fff;
 }
@@ -360,9 +359,6 @@ body {
 	.rowcolcontainer {
 		display: flex;
 		flex-direction: row;
-	}
-	.dropdownlinks {
-		position: absolute;
 	}
 	.myimg {
 		height: 500px;
