@@ -30,14 +30,15 @@ def cart_detail(request):
 	cart = Cart(request)
 	for item in cart:
 
-		# attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
-		attribute = ProductAttribute.objects.filter(attribute=item.get('attribute'))[0]
+		attribute = get_object_or_404(ProductAttribute, attribute=item.get('attribute'))
+		# attribute = ProductAttribute.objects.filter(attribute=item.get('attribute'))[0]
 		
+
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
 			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
 
 		# set the query set and attribute of re-used form
 		item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
-		item['update_quantity_form'].fields['variant'].attribute = attribute
+		# item['update_quantity_form'].fields['variant'].attribute = attribute
 
 	return render(request, 'cart_detail.html', {'cart': cart})
