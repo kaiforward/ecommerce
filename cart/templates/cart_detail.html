@@ -26,15 +26,15 @@
 					</div>
 
 					<div class="cartrowcol">
-						<div>Product</div>
-						<div>
+						<div class="producttitle">Product</div>
+						<div class="productdata">
 							{{ product.name }}
 						</div>
 					</div>
 
 					<div class="cartrowcol">
-						<div>Unit Price</div>
-						<div>
+						<div class="producttitle">Price</div>
+						<div class="productdata">
 							{{ item.price }}
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 						</div>
 						{% endif %}
 						<div class="cartrowcol">
-							<div style="height: 17px;"></div>							
+							<div class="cartemptybox"></div>							
 							<input type="submit" value="Change">
 							{% csrf_token %}
 						</div>
@@ -64,8 +64,8 @@
 						</div>
 					</div>
 					<div class="cartrowcol">
-						<div>Price</div>
-						<div>
+						<div class="producttitle">Sub Total</div>
+						<div class="productdata">
 							{{ item.total_price }}
 						</div>	
 					</div>
