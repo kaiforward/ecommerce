@@ -32,7 +32,7 @@
 					<div class="cartrowcol">
 						<div class="producttitle">Price</div>
 						<div class="productdata">
-							{{ item.price }}
+							£{{ item.price }}
 						</div>
 					</div>
 					<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
@@ -63,11 +63,12 @@
 					<div class="cartrowcol">
 						<div class="producttitle">Sub Total</div>
 						<div class="productdata">
-							{{ item.total_price }}
+							£{{ item.total_price }}
 						</div>	
 					</div>
 				</div>
 			{% endwith %}
+			<hr>
 		{% endfor %}
 	</div>
 
