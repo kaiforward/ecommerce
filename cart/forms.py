@@ -16,4 +16,4 @@ class CartAddProductForm(forms.Form):
 	update_variant = forms.BooleanField(required=False,
 	initial=False,widget=forms.HiddenInput)
 
-	variant = forms.ModelChoiceField(queryset=ProductAttribute.objects.filter())
+	variant = forms.ModelChoiceField(queryset=ProductAttribute.objects.filter(),required=False, empty_label=None,)

@@ -81,6 +81,7 @@ body {
 	text-align: center;
 }
 .headerwrap {
+	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -163,7 +164,6 @@ body {
 .productinfo {
 	margin-left: 10px;
 	padding-top: 10px;
-	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -419,7 +419,7 @@ body {
 		justify-content: space-evenly;
 	}
 	.myform {
-		width: unset;
+		width: 200px;
 		flex-direction: row;
 	}
 }

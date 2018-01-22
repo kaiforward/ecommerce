@@ -21,19 +21,25 @@ class Cart(object):
 		Add a product to the cart or update its quantity.
 		"""
 
+		# set product attributes
+		if attribute == None:
+			attribute = 'none'
+		else:
+			attribute = attribute.attribute
+
 		product_pk = str(product.pk)
 		if product_pk not in self.cart:
 			self.cart[product_pk] = {'quantity': 0, 'price': str(product.price)}
 
 		if update_quantity:
-			self.cart[product_pk]['quantity'] = quantity
-			
+			self.cart[product_pk]['quantity'] = quantity			
 		else:
 			self.cart[product_pk]['quantity'] += quantity
+
 		if update_variant:
-			self.cart[product_pk]['attribute'] = attribute.attribute
+				self.cart[product_pk]['attribute'] = attribute
 		else:
-			self.cart[product_pk]['attribute'] = attribute.attribute
+				self.cart[product_pk]['attribute'] = attribute
 
 		self.save()
 

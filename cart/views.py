@@ -4,6 +4,12 @@ from products.models import Product, ProductAttribute, ProductVariant
 from .cart import Cart
 from .forms import CartAddProductForm
 
+from django.contrib import messages
+import logging
+
+
+
+
 # Create your views here.
 @require_POST
 def cart_add(request, product_pk):
@@ -18,6 +24,10 @@ def cart_add(request, product_pk):
 				 update_quantity=cd['update_quantity'],
 				 update_variant=cd['update_variant'],
 				 )
+	else: 
+		logging.error('form not valid')
+
+
 	return redirect('cart_detail')
 
 def cart_remove(request, product_pk):
@@ -27,15 +37,24 @@ def cart_remove(request, product_pk):
 	return redirect('cart_detail')
 
 def cart_detail(request):
+
 	cart = Cart(request)
 	# get session cart
 	for item in cart:
 		# Okay seems hacky.
-		# try to get product attribute
-		attribute = get_object_or_404(ProductAttribute, attribute=item['attribute'])
-		# give each item in cart a form to update the quantity or variant of the product
-		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
-			'variant': attribute, 'update_quantity': True, 'update_variant':True, })
-		# set the varaint queryset to use the variant associated with product attribute chosen.
-		item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
+
+		# if product has an attribute
+		if item['attribute'] != 'none':
+			# find attribute
+			attribute = get_object_or_404(ProductAttribute, attribute=item['attribute'])
+			# give each item in cart a form to update the quantity or variant of the product
+			item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
+				'variant': attribute, 'update_quantity': True, 'update_variant':True, })
+			# set the varaint queryset to use the variant associated with product attribute chosen.
+			item['update_quantity_form'].fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=attribute.product_variant)
+		else:
+			# use items without looking up attributes
+			item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 
+				'variant': item['attribute'], 'update_quantity': True, 'update_variant':True, }) 
+
 	return render(request, 'cart_detail.html', {'cart': cart})
