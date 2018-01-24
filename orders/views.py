@@ -32,12 +32,12 @@ def order(request):
 			cart.clear()
 			# launch asynchronous task
 			# order_created.delay(order.pk)
-			return redirect('order_created', order)
+			return redirect('order_created', order.pk)
 				
 	else:
 		form = OrderForm()
 	return render(request, 'order.html', {'cart': cart, 'form': form})
 													
-def order_created(request, order):
-
+def order_created(request, new_order):
+	order = new_order
 	return render(request, 'order_created.html', {'order': order,})
