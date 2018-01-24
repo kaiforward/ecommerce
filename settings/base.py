@@ -28,11 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_countries',
     'tinymce',
     'home',
     'products',
     'blog',
     'cart',
+    'orders',
     # 'easy_thumbnails',    
     # 'sorl.thumbnail',
 ]
@@ -64,25 +66,14 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 # My Custom Context Processor
                 'products.context_processors.nav_categories', 
-                'home.context_processors.nav_homepage', 
+                'home.context_processors.nav_homepage',
+                # 'cart.context_processors.nav_cart', 
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'evasite.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -140,3 +131,14 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 CART_SESSION_ID = 'cart'
+SHIPPING_SESSION_ID = 'shipping'
+
+COUNTRIES_FIRST = [
+    'GB',
+]
+
+# use env variable in dev and production for good practice
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+
+

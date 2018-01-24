@@ -35,7 +35,7 @@
 							£{{ item.price }}
 						</div>
 					</div>
-					<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
+					<form class="myform cartform" action="{% url 'cart_add' product.pk %}" method="post">
 						{% if item.product.variant %}	
 						<div class="cartrowcol">
 							<div> {{ product.variant }} </div>
@@ -70,8 +70,15 @@
 			{% endwith %}
 			<hr>
 		{% endfor %}
+		<div class="rowcontainer">
+			<p class="totalprice"> Total Price: </p>
+			<p> £{{ cart.get_total_price }} </p>	
+		</div>
+		<hr>
 	</div>
-
+	<div class="cartbutton">
+	<a href="{% url 'order' %}">Add Shipping Details</a>
+	</div>
 {% else %}
 <div class="hr"></div>
 <h3> It looks like your cart is empty </h3>

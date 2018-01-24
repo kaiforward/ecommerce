@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.decorators.http import require_POST
 from products.models import Product, ProductAttribute, ProductVariant
-from .cart import Cart
+from .cart import Cart, Shipping
 from .forms import CartAddProductForm
-
+from django.conf import settings
 from django.contrib import messages
+import stripe
+stripe.api_key = settings.STRIPE_SECRET_KEY
 import logging
-
-
 
 
 # Create your views here.
@@ -23,11 +23,9 @@ def cart_add(request, product_pk):
 				 attribute=cd['variant'],
 				 update_quantity=cd['update_quantity'],
 				 update_variant=cd['update_variant'],
-				 )
+				 )	
 	else: 
 		logging.error('form not valid')
-
-
 	return redirect('cart_detail')
 
 def cart_remove(request, product_pk):
@@ -58,3 +56,10 @@ def cart_detail(request):
 				'variant': item['attribute'], 'update_quantity': True, 'update_variant':True, }) 
 
 	return render(request, 'cart_detail.html', {'cart': cart})
+
+def test_order(request):
+
+	cart = Cart(request)
+	shipping = Shipping(request)
+
+	return render(request, 'test_order.html', {'cart': cart, 'shipping': shipping})

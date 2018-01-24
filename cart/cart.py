@@ -40,7 +40,6 @@ class Cart(object):
 				self.cart[product_pk]['attribute'] = attribute
 		else:
 				self.cart[product_pk]['attribute'] = attribute
-
 		self.save()
 
 	def save(self):
@@ -64,6 +63,7 @@ class Cart(object):
 		"""
 		Iterate over items in the cart and get the products from the db
 		"""
+		self.session.modified = False
 		product_pks = self.cart.keys()
 		# get the product objects and add them to the cart
 		products = Product.objects.filter(pk__in=product_pks)
@@ -71,7 +71,7 @@ class Cart(object):
 			self.cart[str(product.pk)]['product'] = product
 
 		for item in self.cart.values():
-			item['price'] = Decimal(item['price'])
+			item['price'] = (Decimal(item['price']))
 			item['total_price'] = item['price'] * item['quantity']
 			yield item
 
@@ -82,4 +82,63 @@ class Cart(object):
 		return sum(item['quantity'] for item in self.cart.values())
 
 	def get_total_price(self):
-		return sum(Decimal(item['price']) * item['qauntity'] for item in self.cart.values())
+		return (sum(Decimal(item['price']) * item['quantity'] for item in self.cart.values()))
+
+	def clear(self):
+		#empty cart
+		self.session[settings.CART_SESSION_ID] = {}
+		self.session.modified = True
+
+class Shipping(object):
+
+	def __init__(self, request):
+
+		"""
+		Initialize the cart.
+		"""
+		self.session = request.session
+		shipping = self.session.get(settings.SHIPPING_SESSION_ID)
+		if not shipping:
+			# Create empty shipping info if one doesn't exist
+			shipping = self.session[settings.SHIPPING_SESSION_ID] = {}
+		self.shipping = shipping
+
+	def add_shipping_details(self, 
+							first_name, 
+							last_name,
+							email, 
+							address1, 
+							town, 
+							postcode, 
+							country, 
+							additional_note,):
+		"""
+		Add Cart Shipping details.
+		"""
+		self.shipping['shipping'] = {
+			'first_name': str(first_name),
+			'last_name': str(last_name),
+			'email': str(email),
+			'address1': str(address1),
+			'town': str(town),
+			'postcode': str(postcode),
+			'country': str(country),
+			'additional_note': str(additional_note),
+		}
+
+		self.save()
+
+	def save(self):
+
+		# update session shipping details.
+		self.session[settings.SHIPPING_SESSION_ID] = self.shipping
+		# mark the session as "modified" to make sure it is saved.
+		self.session.modified = True
+
+	def __iter__(self):
+
+		"""
+		Iterate over items in the cart and get the products from the db
+		"""
+		for item in self.shipping.values():
+			yield item

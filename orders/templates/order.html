@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Shipping{% endblock %}
+{% block content %}
+
+<div class="hr"></div>
+<div class="colcontainer">
+	<h3> Checkout</h3>
+	<hr>
+	<div class="colcontainer">
+		{% for item in cart %}
+		<div class="shippingproduct shippingform">
+				{% with product=item.product %}
+					<p> {{ product.name }} X {{ item.quantity }}</p>
+					<p> £{{ item.total_price }} </p>	
+				{% endwith %}	
+		</div>
+		{% endfor %}
+		<div class="rowcontainer">
+			<p class="totalprice"> Total Price: </p>
+			<p> £{{ cart.get_total_price }} </p>	
+		</div>
+	</div>
+	<hr>
+	<form name="shippingForm" class="myform shippingform" method="post">
+		<div class="colcontainer">
+		{% csrf_token %}
+	    	<div id="userdetails">
+	    		<div class="shippingitem">
+	    			<p> Shipping Details </p>
+	    		</div>	
+		        <div class="shippingitem">
+		            <div class="shippingkey"> First Name: </div>
+		            {{ form.first_name }}
+		        </div>
+		        <div class="shippingitem">
+		            <div class="shippingkey"> Last Name: </div>
+		            {{ form.last_name }}
+		        </div>
+		        <div class="shippingitem ">
+		            <div class="shippingkey"> Email: </div>
+		            {{ form.email }}
+		        </div>
+		        {% if not form.postcode.errors %}
+		        <div class="colcontainer">
+		        	<p id="anotherone"></p>
+		        	<button type="button" class="cartbutton" onclick="validateForm()">next</button>		        	
+		        </div>
+		        <hr>
+		        {% endif %}
+	        </div>
+	        <div id="shippingdetails" class="{% if not form.postcode.errors %}  initiallyhidden {% endif %}">
+	    		<div class="shippingitem">
+	    			<p> Address </p>
+	    		</div>
+		        <div class="shippingitem">
+		            <div class="shippingkey"> Address: </div>	            
+		            {{ form.address1 }}
+		        </div>
+		        <div class="shippingitem">
+		            <div class="shippingkey"> Town or City: </div>
+		            {{ form.town }}
+		        </div>	        
+		        <div class="shippingitem">
+		            <div class="shippingkey"> Postcode: </div>
+		            {{ form.postcode }}
+		        </div>
+		        {% if form.postcode.errors %}
+			        <div class="alert alert-warning">
+						{{ form.postcode.errors }}	
+					</div>
+				{% endif %}	
+		        <div class="shippingitem">
+		            <div class="shippingkey"> Country: </div>
+		            {{ form.country }}
+		        </div>
+		        {% if form.additional_note %}
+			        <div class="shippingitem">
+			            <div class="shippingkey"> Additional Note: </div>
+			            {{ form.additional_note }}
+			        </div>
+	        	{% endif %}
+	    		<hr>
+	    		<div class="colcontainer">
+					<input type="submit" name="Head to Payment">
+				</div>
+				<hr>
+	    	</div>
+		</div>
+	</form>
+</div>
+{% endblock %}

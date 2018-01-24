@@ -57,7 +57,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
-.initallyhidden {
+.initiallyhidden {
 	display: none;
 }
 
@@ -301,13 +301,16 @@ body {
 	border-radius: 5px;
 }
 .myform input {
-	padding: 5px;
+	cursor: pointer;
+	padding: 6px;
 	background-color: #eeeeee;
 	border: 2px solid white;
 	border-radius: 5px;
 }
 .cartbutton {
-	padding: 5px;
+	width: max-content;
+	margin-top: 1px;
+	padding: 6px;
 	background-color: #eeeeee;
 	border: 2px solid white;
 	border-radius: 5px;
@@ -335,6 +338,45 @@ body {
 	width: 150px;
 	height: 100px;
 	object-fit: cover;
+}
+
+.totalprice {
+	margin-left: auto;
+	padding-right: 20px;
+}
+
+.shippingform {
+	width: 100%;
+}
+.shippingitem {
+	padding:6px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.shippingitem select {
+	width: 75%;
+	margin-left: 6px;
+}
+.shippingitem input {
+	width: 75%;
+	margin-left: 6px;
+}
+.shippingkey {
+	width: 25%;
+}
+.shippingproduct {
+	padding: 6px;
+	display: flex;
+	flex-direction: row;	
+	justify-content: space-between;
+}
+#userdetails {
+	width: 100%;
+}
+#shippingdetails {
+	width: 100%;
 }
 
 @media only screen and (min-width: 575px) {
@@ -382,6 +424,7 @@ body {
 }
 
 @media only screen and (min-width: 767px) {
+
 	.prodrowcolcontainer {
 		display: flex;
 		flex-direction: row;
@@ -407,6 +450,9 @@ body {
 	.featureimg {
 		height: 300px;
 	}
+	.productfocusimg {
+		height: 500px;
+	}
 	.productbox {
 		width: 49.99%;
 	}
@@ -420,10 +466,16 @@ body {
 		flex-direction: row;
 		justify-content: space-evenly;
 	}
-	.myform {
+	.cartform {
 		width: 200px;
+	} 
+	.myform {
 		flex-direction: row;
 	}
+	.shippingform {
+		width: 80%;
+	}
+
 }
 
 @media only screen and (min-width: 1200px) {
@@ -440,7 +492,6 @@ body {
 	.productimg {
 		height: 400px;
 	}
-
 	.categorywrap:hover img{
 		filter: brightness(0.4);
 	}
@@ -461,6 +512,13 @@ body {
 		margin-left: 15%;
 		margin-right: 15%;
 	}
+	.productfocusimg {
+		height: 600px;
+	}
+	.shippingform {
+		width: 50%;
+	}
+
 }	
 
 /*----------------------------*/

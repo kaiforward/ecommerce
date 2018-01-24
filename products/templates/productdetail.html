@@ -30,6 +30,7 @@
 		</div>
 	</div>	
 	<div class="productbox">
+		<div class="hr"></div>
 		<div class="productdetailinfo">
 			<h3>{{ product.name }}</h3>
 			<!-- use safe tag for description as admin users only will input product descriptions. Allows html rendering from tinyMCE -->
@@ -43,34 +44,8 @@
 			<div class="infowrap">
 				<p class="productinfobox">Stock Available:</p>
 				<p class="productinfobox">{{ product.stock }}</p>
-			</div>	
-
-					
-			{% if product.variant_two %}
-				<div class="infowrap">
-					{{ product.variant_two }}				
-					<select class="myselect" name="variantlist" form="form">
-						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-						{% for attribute in product.variant_two.productattribute_set.all %}
-							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-			  			{% endfor %}
-					</select>
-				</div>			
-			{% endif %}
-
-			{% if product.variant_three %}
-				<div class="infowrap">
-					{{ product.variant_three }}				
-					<select class="myselect" name="variantlist" form="form">
-						<!-- using FOO_set allows objects to access related foreign key objects using name or related name -->
-						{% for attribute in product.variant_three.productattribute_set.all %}
-							<option value="{{ attribute.attribute }}">{{ attribute.attribute }}</option>
-			  			{% endfor %}
-					</select>
-					</div>		
-			{% endif %}		
+			</div>		
 			<form class="myform" action="{% url 'cart_add' product.pk %}" method="post">
-
 				<div class="cartrowcol">
 					{% if product.variant %}
 					<p> {{ product.variant }} </p>
@@ -89,6 +64,7 @@
 				</div>
 			</form>
 		</div>
+		<div class="hr"></div>
 	</div>
 </div>
 
