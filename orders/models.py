@@ -12,7 +12,7 @@ class CustomerOrder(models.Model):
 	country = models.CharField(max_length=100)
 	post_code = models.CharField(max_length=8)
 	paid = models.BooleanField(default=False)
-	additional_note = models.CharField(max_length=200)
+	additional_note = models.CharField(max_length=200, blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
 

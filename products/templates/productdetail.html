@@ -29,6 +29,7 @@
 			</a>
 		</div>
 	</div>	
+
 	<div class="productbox">
 		<div class="hr"></div>
 		<div class="productdetailinfo">
@@ -65,7 +66,19 @@
 			</form>
 		</div>
 		<div class="hr"></div>
-	</div>
+	</div>	
 </div>
-
+<hr>
+<div class="rowcontainer wrap">
+{% for product in random_products %}
+	<a href="{% url 'productdetail' product.pk %}" class="categorywrap">{{ collection }}
+			{% for photo in product.photo_set.all %}
+			    {% if forloop.first %}
+				<img class="categoryimg" src="/media/{{ photo.image }}">
+				{% endif %}
+			{% endfor %}
+		<p class="categorytext"> {{ product.name }}</p>
+	</a>
+{% endfor %}
+</div>
 {% endblock %}

@@ -47,8 +47,10 @@
                             {% endfor %}
                         </div>
                     </div>
-                </div> 
+                </div>
+                {% if url %} 
                 <a class="link" href="{% url 'about' %}">About</a>
+                {% endif %}
                 <a class="link" href="{% url 'posts_all_view' %}">Blog</a>
                 <a class="link" href="{% url 'cart_detail' %}">Cart</a>
             </div>
