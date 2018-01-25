@@ -29,6 +29,16 @@ class HomeFeature(models.Model):
 	def __str__(self):
 		return "3 Featured Products"
 
+class HomeCollection(models.Model):
+
+	category_one = models.ForeignKey(Category, on_delete=models.CASCADE)
+	category_two = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_two')
+	category_three = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_three')
+	category_four = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category_four')
+
+	def __str__(self):
+		return "4 Featured Categories"
+
 class About(models.Model):
 
 	headline =  models.CharField(max_length=50, blank=True, null=True)

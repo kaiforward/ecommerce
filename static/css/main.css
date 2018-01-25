@@ -31,7 +31,10 @@ body {
 .link:hover {
 	color: #cecece;
 }
-
+.menutag {
+	padding-left: 5px;
+	font-size: 0.75em;
+}
 .mydropdown {
 	cursor: pointer;
 }
@@ -378,6 +381,9 @@ body {
 #shippingdetails {
 	width: 100%;
 }
+.align {
+	align-items: center;
+}
 
 @media only screen and (min-width: 575px) {
 	body {
@@ -538,4 +544,11 @@ body {
 	color: #212529;
 	padding: unset;
 	top: 30px;
+}
+.navbar-toggler-icon {
+	width: 1em;
+	height: 1em;
+}
+.navbar {
+	padding: 0.25rem 0.25rem;
 }
