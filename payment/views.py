@@ -36,7 +36,7 @@ def make_payment(request):
 
 	host = request.get_host()
 	paypal_dict = {
-	'business': settings.PAYPAL_RECIEVER_EMAIL,
+	'business': settings.PAYPAL_RECEIVER_EMAIL,
 	# get decimal amount for paypal
 	'amount': '%.2f' % order.get_total_cost(),
 	'item_name': 'Order {}'.format(order_pk),
