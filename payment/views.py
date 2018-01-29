@@ -22,7 +22,8 @@ def make_payment(request):
 	order_pk = request.session.get('order_pk')
 	order = get_object_or_404(CustomerOrder, pk=order_pk)
 	products = CustomerProduct.objects.filter(customer_order=order)
-
+	host = request.get_host()
+	
 	stripe_dict = {
 	'stripe_key': settings.STRIPE_PUBLIC_KEY,
 	'data_name': 'Eva Brudenell',
@@ -30,9 +31,7 @@ def make_payment(request):
 	'amount': '{}'.format(int(order.get_total_cost()*100)),
 	'item_name': 'Order {}'.format(order_pk),
 	}
-
-
-	host = request.get_host()
+	
 	paypal_dict = {
 	'business': settings.PAYPAL_RECEIVER_EMAIL,
 	# get decimal amount for paypal

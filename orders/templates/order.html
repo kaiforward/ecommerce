@@ -42,15 +42,8 @@
 		            <div class="shippingkey"> Email: </div>
 		            {{ form.email }}
 		        </div>
-		        {% if not form.postcode.errors %}
-		        <div class="colcontainer">
-		        	<p id="anotherone"></p>
-		        	<button type="button" class="cartbutton" onclick="validateForm()">next</button>		        	
-		        </div>
-		        <hr>
-		        {% endif %}
 	        </div>
-<!-- 	        <div id="shippingdetails" class="{% if not form.postcode.errors %}  initiallyhidden {% endif %}"> -->
+	        <hr>
 			<div id=shippingdetails>
 	    		<div class="shippingitem">
 	    			<p> Address </p>

@@ -18,8 +18,6 @@ $( document ).ready(function() {
 		});	
 	}
 
-
-
 	// Add swipe functionality to images
 	$(".mycarousel").on("touchstart", function(event){
 	        var xClick = event.originalEvent.touches[0].pageX;
@@ -39,34 +37,17 @@ $( document ).ready(function() {
 
 });
 
-// function myFunction() {
-//     var x, text;
-
-//     // Get the value of the input field with id="numb"
-//     x = document.getElementById("id_first_name").value;
-
-//     // If x is Not a Number or less than one or greater than 10
-//     if (isNaN(x) || x < 1 || x > 10) {
-//         text = "Input not valid";
-//     } else {
-//         text = "Input OK";
-// 		$( "#userdetails" ).slideToggle('slow');
-		
+// function validateForm() {
+//     var first_name = document.forms["shippingForm"]["first_name"].value;
+//     var last_name = document.forms["shippingForm"]["last_name"].value;
+//     var email = document.forms["shippingForm"]["email"].value;
+//     if (first_name == "" || null || last_name == "" || null || email == "" || null ) {
+//         text = "Please fill in all fields"
+//         document.getElementById("anotherone").innerHTML = text;
+//         return false;
 //     }
-//     document.getElementById("anotherone").innerHTML = text;
-// }	
-
-function validateForm() {
-    var first_name = document.forms["shippingForm"]["first_name"].value;
-    var last_name = document.forms["shippingForm"]["last_name"].value;
-    var email = document.forms["shippingForm"]["email"].value;
-    if (first_name == "" || null || last_name == "" || null || email == "" || null ) {
-        text = "Please fill in all fields"
-        document.getElementById("anotherone").innerHTML = text;
-        return false;
-    }
-    else {
-        // $( "#userdetails" ).slideToggle('slow');
-        $( "#shippingdetails" ).slideToggle('slow');
-    }
-}	 	
+//     else {
+//         // $( "#userdetails" ).slideToggle('slow');
+//         $( "#shippingdetails" ).slideToggle('slow');
+//     }
+// }	 	
