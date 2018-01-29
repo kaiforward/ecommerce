@@ -6,7 +6,6 @@ a:hover {
 	color: inherit;
 	text-decoration: unset;
 }
-
 hr {
 	width: 80%;
 	border-top: 2px solid #dcdcdc;
@@ -14,12 +13,17 @@ hr {
 .hr {
 	height: 25px;
 }
-
 body {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
 }
-
+footer {
+	border-top: 2px solid lightgray;
+	margin-top: 30px;
+}
+button {
+	cursor: pointer;
+}
 .link {
 	color: #212529;
 	background-color: white;
