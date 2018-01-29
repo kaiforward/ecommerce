@@ -17,10 +17,12 @@
 <body>
 
     <div class="headerwrap">
-        <img class="backgroundimg" src="/media/{{ navbar_content.image }}">
-        <a href="/" class="abs myheader">
-           <h3 class="largeheadertext"> {{ navbar_content.headline }} </h3> 
-        </a> 
+        {% for header in navbar_content %}
+            <img class="backgroundimg" src="/media/{{ header.image }}">
+            <a href="/" class="abs myheader">
+               <h3 class="largeheadertext"> {{ header.headline }} </h3> 
+            </a>
+        {% endfor %}
     </div>
 
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">

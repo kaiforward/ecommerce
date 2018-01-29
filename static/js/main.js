@@ -3,20 +3,19 @@ $( document ).ready(function() {
 	$( ".mydropdown" ).on("tap", function(){
 	 	$( ".dropdownlinks" ).slideToggle('fast');
 	});
+	$( ".mydropdown" ).click(function(){
+	 	$( ".dropdownlinks" ).slideToggle('fast');
+	});	
+	
+	// if($('#isntmobile').is(':visible')) {
+	// 	$( ".mydropdown" ).mouseenter(function(){
+	// 	 	$( ".dropdownlinks" ).slideToggle('fast');
+	// 	});
+	// 	$( ".mydropdown" ).mouseleave(function(){
+	// 	 	$( ".dropdownlinks" ).slideToggle('fast');
+	// 	});					
+	// }
 
-	if($('#isntmobile').is(':visible')) {
-		$( ".mydropdown" ).mouseenter(function(){
-		 	$( ".dropdownlinks" ).slideToggle('fast');
-		});
-		$( ".mydropdown" ).mouseleave(function(){
-		 	$( ".dropdownlinks" ).slideToggle('fast');
-		});					
-	}
-	else {
-		$( ".mydropdown" ).click(function(){
-		 	$( ".dropdownlinks" ).slideToggle('fast');
-		});	
-	}
 
 	// Add swipe functionality to images
 	$(".mycarousel").on("touchstart", function(event){

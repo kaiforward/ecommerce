@@ -23,7 +23,7 @@ def make_payment(request):
 	order = get_object_or_404(CustomerOrder, pk=order_pk)
 	products = CustomerProduct.objects.filter(customer_order=order)
 	host = request.get_host()
-	
+
 	stripe_dict = {
 	'stripe_key': settings.STRIPE_PUBLIC_KEY,
 	'data_name': 'Eva Brudenell',
@@ -59,7 +59,7 @@ def stripe_payment(request):
 				  'postcode': order.post_code,
 				  'order number': order.pk,
 				  'note': order.additional_note,}
-	if len(products) < 15:	
+	if len(products) < 13:	
 		for product in products:
 			order_meta[product.product.name] = 'quantity={}, attribute={}'.format(product.quantity, product.attribute) 
 	else:
