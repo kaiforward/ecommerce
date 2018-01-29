@@ -141,11 +141,4 @@ COUNTRIES_FIRST = [
     'GB',
 ]
 
-# 'pk_test_2jElTRtzMvtW5zNLI7gI0vSz'
-# 'sk_test_hfA92LDhjAkrzBbDiifmA3IN'
-
-
-# django-paypal settings
-PAYPAL_RECIEVER_EMAIL = 'kaiforward123-facilitator@gmail.com'
-PAYPAL_TEST = True
 

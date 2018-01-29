@@ -7,8 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from orders.models import CustomerOrder, CustomerProduct
 import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
-
-from paypalrestsdk import Payment
 import logging
 
 @csrf_exempt
