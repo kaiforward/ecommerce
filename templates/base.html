@@ -5,6 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
@@ -67,11 +69,16 @@
     </div>
 
     <footer class="colcontainer">
+        <div class="hr"></div>
         <div class="rowcolcontainer myfooter">
-            <p class="link">Email@emailadress.com</p>
-            <p class="link">Contact</p>
-            <p class="link">Order Queries</p>
+            <a href="/" class="footerlink">Email@emailadress.com</a>
+            <a href="/" class="footerlink">Contact</a>
+            <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" class="footerlink" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></a>
+            <a href="https://stripe.com/gb" class="footerlink">
+            <span><img src="/static/powered_by_stripe.png"></span>
+            </a>
         </div>
+        <div class="hr"></div>
     </footer>
 
     <div id="ismobile"></div>

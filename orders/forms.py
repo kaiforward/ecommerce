@@ -4,6 +4,7 @@ from django_countries.fields import LazyTypedChoiceField
 from django.core.exceptions import ValidationError 
 from django.core import validators
 from django_countries import countries
+from .models import ShippingChoice
 import re
 
 def validate_alphanumeric(value):
@@ -25,3 +26,4 @@ class OrderForm(forms.Form):
 	postcode = forms.CharField(validators=[validate_alphanumeric])
 	country = LazyTypedChoiceField(choices=countries)
 	additional_note = forms.CharField(max_length=100, required=False)
+	shipping = forms.ModelChoiceField(queryset=ShippingChoice.objects.all(),required=False, empty_label=None,)

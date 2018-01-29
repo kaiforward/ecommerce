@@ -22,17 +22,17 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 
-	path('', include('home.urls')),	
+	
+    path('paypal/', include('paypal.standard.ipn.urls')),	
     path('cart/', include('cart.urls')),
 	path('products/', include('products.urls')),
     path('blog/', include('blog.urls')),
-    path('orders/', include('orders.urls')),   
+    path('orders/', include('orders.urls')), 
+    path('payment/', include('payment.urls')),   
 	path('tinymce/', include('tinymce.urls')),
+    path('', include('home.urls')),
 
-	# Old url style
-    # url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-
-    # this works i think? new pathign is confusing at the moment
+    # this works i think? new pathing is confusing at the moment
     re_path(r'media/(?P<path>.*)?$', serve, {'document_root': settings.MEDIA_ROOT}),
     
     path('admin/', admin.site.urls),

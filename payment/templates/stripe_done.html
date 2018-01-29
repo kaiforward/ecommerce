@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Payment Sucess{% endblock %}
+{% block content %}
+
+<h1>Your payment was sucessfull</h1>
+
+{% csrf_token %}
+
+{% endblock %}

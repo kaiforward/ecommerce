@@ -50,7 +50,8 @@
 		        <hr>
 		        {% endif %}
 	        </div>
-	        <div id="shippingdetails" class="{% if not form.postcode.errors %}  initiallyhidden {% endif %}">
+<!-- 	        <div id="shippingdetails" class="{% if not form.postcode.errors %}  initiallyhidden {% endif %}"> -->
+			<div id=shippingdetails>
 	    		<div class="shippingitem">
 	    			<p> Address </p>
 	    		</div>
@@ -83,7 +84,8 @@
 	        	{% endif %}
 	    		<hr>
 	    		<div class="colcontainer">
-					<input type="submit" name="Head to Payment">
+	    		<div class="colcontainer">
+					<input type="submit" name="Checkout" label="Checkout">
 				</div>
 				<hr>
 	    	</div>

@@ -9,6 +9,8 @@ DATABASES = {
     'default': dj_database_url.config('CLEARDB_DATABASE_URL')
 }
 
+PAYPAL_RECIEVER_EMAIL = os.environ['PAYPAL_RECIEVER_EMAIL']
+
 SITE_URL = 'https://evabrudenell.herokuapp.com'
 ALLOWED_HOSTS.append('evabrudenell.herokuapp.com')
 # Log DEBUG information to the console

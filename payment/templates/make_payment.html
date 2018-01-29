@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Payment Sucess{% endblock %}
+{% block content %}
+<div class="colcontainer">
+    <div class="hr"></div>
+    <h3>Choose Payment Method</h3>
+    <hr>
+    <div class="rowcolcontainer">
+        <div class="colcontainer paypalbox">
+            <a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_SbyPP_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a>
+            <div class="paypalbtn">
+            {{ form.render }}
+            </div>
+        </div>
+        <div class="colcontainer">
+            <img src="/static/stripe.png" class="stripelogo">
+            <form action="{% url 'stripe_payment' %}" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ stripe_dict.stripe_key }}"
+                data-amount="{{ stripe_dict.amount }}"
+                data-name="{{ stripe_dict.item_name }}"
+                data-description="Eva Brudenell"
+                data-currency="gpb"
+                data-image=""
+                data-locale="auto"
+                data-zip-code="true">
+              </script>
+              {% csrf_token %}
+            </form>
+            <div class="hr"></div>
+        </div>
+    </div>
+    <div class="hr"></div>
+</div> 
+<!-- <table style="width:100%">
+    <tr>
+        <th>            
+        <table border="0" cellpadding="10" cellspacing="0" align="center"><tr><td align="center"></td></tr><tr><td align="center"><a href="https://www.paypal.com/uk/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/uk/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/AM_SbyPP_mc_vs_ms_ae_UK.png" border="0" alt="PayPal Acceptance Mark"></a></td></tr></table>   
+        </th>
+        <th><img src="/static/stripe.png" style="width: 318px;"></th> 
+    </tr>
+    <tr>
+        <td>{{ form.render }}</td>
+        <td>
+            <form action="{% url 'stripe_payment' %}" method="POST">
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ stripe_dict.stripe_key }}"
+                data-amount="{{ stripe_dict.amount }}"
+                data-name="{{ stripe_dict.item_name }}"
+                data-description="Eva Brudenell"
+                data-currency="gpb"
+                data-image=""
+                data-locale="auto"
+                data-zip-code="true">
+              </script>
+              {% csrf_token %}
+            </form>
+        </td> 
+    </tr>
+</table>  -->  
+   
+{% endblock %}

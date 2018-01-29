@@ -384,6 +384,18 @@ body {
 .align {
 	align-items: center;
 }
+.footerlink {
+	padding: 0.75em;
+}
+.stripelogo {
+	width: 300px;
+}
+.paypalbox {
+	border-bottom: 2px solid white; 
+}
+.paypalbtn {
+	padding:20px 10px 10px 10px; 
+}
 
 @media only screen and (min-width: 575px) {
 	body {
@@ -426,6 +438,10 @@ body {
 	}
 	.myform {
 		flex-wrap: unset;
+	}
+	.paypalbox {
+		border-bottom: unset; 
+		border-right: 2px solid white;
 	}
 }
 
@@ -481,7 +497,6 @@ body {
 	.shippingform {
 		width: 80%;
 	}
-
 }
 
 @media only screen and (min-width: 1200px) {
@@ -552,3 +567,24 @@ body {
 .navbar {
 	padding: 0.25rem 0.25rem;
 }
+
+
+/* ADMIN DETAIL ORDER */
+/*table {
+    width:100%;
+}
+*/
+.module {
+    margin:20px 0;
+}
+
+.num {
+    text-align:right;
+}
+
+.total {
+    background:#417690;
+    color:#fff;
+    font-weight:bold;
+}
+

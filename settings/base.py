@@ -15,11 +15,14 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["573e1712.ngrok.io", "localhost"]
 
+# remember to restart commandline when you add new vairables
+# django wants a key in quotes ""
 SECRET_KEY = os.environ['EVA_SITE_SECRET_KEY']
-
-# Application definition
+# Stripe doesn't
+STRIPE_PUBLIC_KEY = os.environ['EVA_SITE_STRIPE_PUBLIC']
+STRIPE_SECRET_KEY = os.environ['EVA_SITE_STRIPE_SECRET']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,8 +38,9 @@ INSTALLED_APPS = [
     'blog',
     'cart',
     'orders',
-    # 'easy_thumbnails',    
-    # 'sorl.thumbnail',
+    'paypal.standard.ipn',
+    'payment',
+    'stripe'
 ]
 
 MIDDLEWARE = [
@@ -137,8 +141,11 @@ COUNTRIES_FIRST = [
     'GB',
 ]
 
-# use env variable in dev and production for good practice
-STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+# 'pk_test_2jElTRtzMvtW5zNLI7gI0vSz'
+# 'sk_test_hfA92LDhjAkrzBbDiifmA3IN'
 
+
+# django-paypal settings
+PAYPAL_RECIEVER_EMAIL = 'kaiforward123-facilitator@gmail.com'
+PAYPAL_TEST = True
 

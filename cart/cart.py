@@ -44,6 +44,8 @@ class Cart(object):
 
 	def save(self):
 
+
+
 		# update session cart
 		self.session[settings.CART_SESSION_ID] = self.cart
 		# mark the session as "modified" to make sure it is saved
@@ -63,7 +65,6 @@ class Cart(object):
 		"""
 		Iterate over items in the cart and get the products from the db
 		"""
-		self.session.modified = False
 		product_pks = self.cart.keys()
 		# get the product objects and add them to the cart
 		products = Product.objects.filter(pk__in=product_pks)
@@ -74,6 +75,7 @@ class Cart(object):
 			item['price'] = (Decimal(item['price']))
 			item['total_price'] = item['price'] * item['quantity']
 			yield item
+			self.session.modified = False
 
 	def __len__(self):
 		"""
