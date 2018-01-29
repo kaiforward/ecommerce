@@ -10,6 +10,7 @@ DATABASES = {
 }
 
 PAYPAL_RECEIVER_EMAIL = os.environ['PAYPAL_RECEIVER_EMAIL']
+PAYPAL_TEST = True
 
 SITE_URL = 'https://evabrudenell.herokuapp.com'
 ALLOWED_HOSTS.append('evabrudenell.herokuapp.com')
