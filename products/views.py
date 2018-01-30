@@ -11,7 +11,11 @@ def product_detail_view(request, product_pk):
 	product = Product.objects.filter(pk=product_pk)[0]
 	cart_product_form = CartAddProductForm()
 	products = Product.objects.filter(category=product.category)
-	random_products = random.sample(list(products), 4)
+	if len(products) >= 4:
+		sample = 4
+		random_products = random.sample(list(products), 4)
+	else:
+		random_products = None
 	# set variant query set according to the product - this took ages to find out!!!
 	cart_product_form.fields['variant'].queryset = ProductAttribute.objects.filter(product_variant=product.variant)
 

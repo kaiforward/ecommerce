@@ -23,10 +23,11 @@ def cart_add(request, product_pk):
 				 attribute=cd['variant'],
 				 update_quantity=cd['update_quantity'],
 				 update_variant=cd['update_variant'],
-				 )	
+				 )
+		messages.success(request, 'Thankyou {} was added to your cart'.format(product.name))	
 	else: 
 		logging.error('form not valid')
-	return redirect('cart_detail')
+	return redirect('productdetail', product_pk)
 
 def cart_remove(request, product_pk):
 	cart = Cart(request)
