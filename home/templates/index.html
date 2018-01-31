@@ -16,7 +16,7 @@
 					{% if forloop.first %}					
 							<div class="carousel-item active">
 								<a onclick="location.href='{% url 'productdetail' product.pk %}'">
-									<img class="d-block myimg"  src="/media/{{ photo.image }}">					
+									<img class="d-block myimg"  src="{{ photo.image.url }}">					
 							  		<div class="carousel-caption">
 								    	<h3> {{ product.name }} </h3>
 								    	<p>{{ home_carousel.category.name }}</p>
@@ -31,7 +31,7 @@
 						<!-- for the carousel to work we use if statement to add active class to first item only -->
 							<div class="carousel-item">
 								<a onclick="location.href='{% url 'productdetail' product.pk %}'">
-									<img class="d-block myimg"  src="/media/{{ photo.image }}">
+									<img class="d-block myimg"  src="{{ photo.image.url }}">
 									<div class="carousel-caption">
 									    <h3> {{ product.name }} </h3>
 									    <p>{{ home_carousel.category.name }}</p>
@@ -65,7 +65,7 @@
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_one.pk %}'">
 					<h3 class="abs productinfo">{{ featured_products.product_one.name }}</h3>
-					<img  class="featureimg" src="/media/{{ photo.image }}">
+					<img  class="featureimg" src="{{ photo.image.url }}">
 				</a>
 			{% endif %}
 	{% endfor %}
@@ -73,7 +73,7 @@
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_two.pk %}'">
 					<h3 class="abs productinfo">{{ featured_products.product_two.name }}</h3>
-					<img class="featureimg" src="/media/{{ photo.image }}">
+					<img class="featureimg" src="{{ photo.image.url }}">
 				</a>
 			{% endif %}
 	{% endfor %}
@@ -81,7 +81,7 @@
 			{% if forloop.first %}
 				<a class="rel feature" onclick="location.href='{% url 'productdetail' featured_products.product_three.pk %}'">
 					<h3 class="abs productinfo">{{ featured_products.product_three.name }}</h3>
-					<img class="featureimg" src="/media/{{ photo.image }}">
+					<img class="featureimg" src="{{ photo.image.url }}">
 				</a>
 			{% endif %}
 	{% endfor %}
@@ -93,19 +93,19 @@
 
 <div class="rowcontainer wrap">
 	<a href="{% url 'productsall' featured_categories.category_one.pk %}" class="categorywrap">
-		<img class="categoryimg" src="/media/{{ featured_categories.category_one.image }}">
+		<img class="categoryimg" src="{{ featured_categories.category_one.image.url }}">
 		<p class="categorytext"> {{ featured_categories.category_one.name }}</p>
 	</a>
 	<a href="{% url 'productsall' featured_categories.category_two.pk %}" class="categorywrap">
-		<img class="categoryimg" src="/media/{{ featured_categories.category_two.image }}">
+		<img class="categoryimg" src="{{ featured_categories.category_two.image.url }}">
 		<p class="categorytext"> {{ featured_categories.category_two.name }}</p>
 	</a>
 	<a href="{% url 'productsall' featured_categories.category_three.pk %}" class="categorywrap">
-		<img class="categoryimg" src="/media/{{ featured_categories.category_three.image }}">
+		<img class="categoryimg" src="{{ featured_categories.category_three.image.url }}">
 		<p class="categorytext"> {{ featured_categories.category_three.name }}</p>
 	</a>
 	<a href="{% url 'productsall' featured_categories.category_four.pk %}" class="categorywrap">
-		<img class="categoryimg" src="/media/{{ featured_categories.category_four.image }}">
+		<img class="categoryimg" src="{{ featured_categories.category_four.image.url }}">
 		<p class="categorytext"> {{ featured_categories.category_four.name }}</p>
 	</a>
 </div>
@@ -122,7 +122,7 @@
 		<div class="colcontainer">		
 			<div class="rowcolcontainer">
 				{% if post.image %}
-						<img src="/media/{{ post.image }}" class="featureimg" style="border-radius: 10px;">		
+						<img src="{{ post.image.url }}" class="featureimg" style="border-radius: 10px;">		
 				{% endif %}
 			</div>
 		</div>

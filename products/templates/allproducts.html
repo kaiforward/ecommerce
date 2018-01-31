@@ -8,7 +8,7 @@
 		<a href="{% url 'productdetail' product.pk %}" class="productwrapper pointer">
 			{% for photo in product.photo_set.all %}
 				{% if forloop.first %}
-					<img class="productimg" src="/media/{{ photo.image }}">
+					<img class="productimg" src="{{ photo.image.url }}">
 				{% endif %}				  		
 			{% endfor %}
 

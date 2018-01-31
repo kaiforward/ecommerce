@@ -17,7 +17,7 @@
 				{% for photo in product.photo_set.all %}
 					<!-- for the carousel to work we use if statement to add active class to first item only -->
 					<div class="carousel-item {% if forloop.first %} active{% endif %}">
-				  		<img class="d-block productfocusimg" src="/media/{{ photo.image }}">
+				  		<img class="d-block productfocusimg" src="{{ photo.image.url }}">
 					</div>		
 				{% endfor %}
 			</div>
@@ -84,7 +84,7 @@
 		<a href="{% url 'productdetail' product.pk %}" class="categorywrap">{{ collection }}
 				{% for photo in product.photo_set.all %}
 				    {% if forloop.first %}
-					<img class="categoryimg" src="/media/{{ photo.image }}">
+					<img class="categoryimg" src="{{ photo.image.url }}">
 					{% endif %}
 				{% endfor %}
 			<p class="categorytext"> {{ product.name }}</p>

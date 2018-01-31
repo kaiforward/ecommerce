@@ -18,7 +18,7 @@
 
     <div class="headerwrap">
         {% for header in navbar_content %}
-            <img class="backgroundimg" src="/media/{{ header.image }}">
+            <img class="backgroundimg" src="{{ header.image.url }}">
             <a href="/" class="abs myheader">
                <h3 class="largeheadertext"> {{ header.headline }} </h3> 
             </a>

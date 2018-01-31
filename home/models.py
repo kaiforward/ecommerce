@@ -8,7 +8,7 @@ from tinymce import models as tinymce_models
 class NavbarImage(models.Model):
 
 	headline = models.CharField(max_length=50, blank=True, null=True)
-	image = models.ImageField(upload_to='navigation', blank=True, null=True)
+	image = models.ImageField(blank=True, null=True)
 
 	def __str__(self):
 		return "Header Title and Image"	

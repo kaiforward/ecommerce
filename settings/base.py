@@ -33,14 +33,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_countries',
     'tinymce',
+    'stripe',
+    'storages',
+    'paypal.standard.ipn',        
     'home',
     'products',
     'blog',
     'cart',
     'orders',
-    'paypal.standard.ipn',
     'payment',
-    'stripe'
+
 ]
 
 MIDDLEWARE = [
@@ -123,9 +125,6 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
 TINYMCE_JS_ROOT = os.path.join(BASE_DIR, "static", "js",
                                "tinymce", "tinymce.min.js")
 
@@ -141,4 +140,19 @@ COUNTRIES_FIRST = [
     'GB',
 ]
 
+AWS_STORAGE_BUCKET_NAME = 'kaiforwardtest'
+AWS_S3_REGION_NAME = 'eu-west-2'  # e.g. us-east-2
+AWS_ACCESS_KEY_ID = 'AKIAJY6QFD7PO33O4MTQ'
+AWS_SECRET_ACCESS_KEY = 'Q6QKPJIY/jUwMkyJ8oF+uhl9mKcnpA6iHiKfIALr' 
 
+# Tell django-storages the domain to use to refer to static files.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIAFILES_LOCATION = 'media'  
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+# to switch to amazon s3 enable these settings, remove old static settings, and run collect static.
+# STATICFILES_LOCATION = 'static'  
+# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+# STATIC_URL = '/static/'
