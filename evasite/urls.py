@@ -31,9 +31,6 @@ urlpatterns = [
     path('payment/', include('payment.urls')),   
 	path('tinymce/', include('tinymce.urls')),
     path('', include('home.urls')),
-
-    # this works i think? new pathing is confusing at the moment
-    # re_path(r'media/(?P<path>.*)?$', serve, {'document_root': settings.MEDIA_ROOT}),
     
     path('admin/', admin.site.urls),
 
