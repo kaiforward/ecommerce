@@ -10,7 +10,7 @@
 		<div class="colcontainer">		
 			<div class="rowcolcontainer">
 				{% if post.image %}
-						<img src="/media/{{ post.image }}" class="featureimg" style="border-radius: 10px;">		
+						<img src="{{ post.image.url }}" class="featureimg" style="border-radius: 10px;">		
 				{% endif %}
 			</div>
 		</div>
