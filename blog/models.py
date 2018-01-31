@@ -5,7 +5,7 @@ from tinymce import models as tinymce_models
 class Blog(models.Model):
 
 	headline = models.CharField(max_length=50)
-	image = models.ImageField(upload_to='productimages', blank=True, null=True)
+	image = models.ImageField(upload_to='blog', blank=True, null=True)
 	description = tinymce_models.HTMLField()
 	date = models.DateTimeField(auto_now_add=True)
 

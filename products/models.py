@@ -5,7 +5,7 @@ from tinymce import models as tinymce_models
 class Category(models.Model):
 
 	name = models.CharField(max_length=50, blank=True, null=True)
-	image = models.ImageField(blank=True, null=True)
+	image = models.ImageField(upload_to='categories', blank=True, null=True)
 	description = tinymce_models.HTMLField()
 
 	def __str__(self):
@@ -44,7 +44,7 @@ class ProductAttribute(models.Model):
 class Photo(models.Model):
 
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)
-	image = models.ImageField(blank=True, null=True)
+	image = models.ImageField(upload_to='products', blank=True, null=True)
 
 	def __str__(self):
 		return self.product.name
