@@ -59,11 +59,13 @@
 					<div class="cartrowcol">
 						<p>Quantity</p>
 						{{ cart_product_form.quantity }}
-						{{ variant }}
 					</div>
-				{% endif %}	
+				{% else %}
+					<div class="initiallyhidden">{{ cart_product_form.quantity }}</div>
+				{% endif %}
+
 				<div class="cartrowcol">
-					{% if product.variant and product.sotck is not 1 %}
+					{% if not product.variant and product.stock is not 1 %}
 					<p class="productemptybox"></p>
 					{% endif %}
 					{% csrf_token %}
