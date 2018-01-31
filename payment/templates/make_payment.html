@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="colcontainer paymentbox">
-            <img src="{% static stripe.png %}" class="stripelogo">
+            <img src="{% static 'stripe.png' %}" class="stripelogo">
             <form action="{% url 'stripe_payment' %}" method="POST">
               <script
                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -23,7 +23,7 @@
                 data-amount="{{ stripe_dict.amount }}"
                 data-name="{{ stripe_dict.item_name }}"
                 data-description="Eva Brudenell"
-                data-currency="gpb"
+                data-currency="GBP"
                 data-image=""
                 data-locale="auto"
                 data-zip-code="true">
