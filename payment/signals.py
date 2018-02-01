@@ -12,6 +12,7 @@ def payment_notification(sender, **kwargs):
 		# payment was sucessful
 		order = get_object_or_404(CustomerOrder, pk=ipn_obj.invoice)
 		order.paid = True
+		order.total_cost = order.get_total_cost()
 		order.save()
 
 valid_ipn_received.connect(payment_notification)

@@ -310,7 +310,6 @@ button {
 .myform input {
 	cursor: pointer;
 	padding: 6px;
-	background-color: #eeeeee;
 	border: 2px solid white;
 	border-radius: 5px;
 }
@@ -400,7 +399,10 @@ button {
 .paypalbtn {
 	padding:10px; 
 }
-
+.blue {
+	color: white;
+	background-color: #17466c;
+}
 @media only screen and (min-width: 575px) {
 	body {
 		font-size: 18px;

@@ -65,11 +65,11 @@
 				{% endif %}
 
 				<div class="cartrowcol">
-					{% if not product.variant and product.stock is not 1 %}
+					{% if product.stock is not 1 %}
 					<p class="productemptybox"></p>
 					{% endif %}
 					{% csrf_token %}
-					<input type="submit" name="" value="Add To Cart">
+					<input class="blue" type="submit" name="" value="Add To Cart">
 				</div>
 			</form>
 		</div>

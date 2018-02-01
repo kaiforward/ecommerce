@@ -112,6 +112,7 @@ def stripe_payment(request):
 		if charge:
 			order.paid = True
 			order.stripe_id = charge.id
+			order.total_cost = order.get_total_cost()
 			order.save()
 		return redirect("stripe_done")
 	    # The payment was successfully processed, the user's card was charged.
@@ -124,34 +125,6 @@ def stripe_done(request):
 
 	return render(request, "stripe_done.html", {'order': order})
 
-def checkout(request):
-
-    new_car = Car(
-        model = "Honda Civic",
-        year  = 2017
-    )
-
-    if request.method == "POST":
-        token    = request.POST.get("stripeToken")
-
-    try:
-        charge  = stripe.Charge.create(
-            amount      = 2000,
-            currency    = "usd",
-            source      = token,
-            description = "The product charged to the user"
-        )
-
-        new_car.charge_id   = charge.id
-
-    except stripe.error.CardError as ce:
-        return False, ce
-
-    else:
-        new_car.save()
-        return redirect("thank_you_page")
-        # The payment was successfully processed, the user's card was charged.
-        # You can now redirect the user to another page or whatever you want
 
 
 

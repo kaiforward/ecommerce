@@ -16,6 +16,7 @@ class CustomerOrder(models.Model):
 	additional_note = models.CharField(max_length=200, blank=True, null=True)
 	shipping_type = models.CharField(max_length=100, default='')
 	stripe_id = models.CharField(max_length=100, default = '')
+	total_cost = models.DecimalField(blank=True, null=True, max_digits=5, decimal_places=2)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
 

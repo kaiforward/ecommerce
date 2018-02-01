@@ -38,7 +38,7 @@ class OrderInline(admin.TabularInline):
 	raw_id_fields = ['product']
 
 class OrderAdmin(admin.ModelAdmin):
-	list_display = ['pk', order_detail, 'first_name', 'last_name', 'email', 'address1', 'post_code', 'town', 'country', 'date_created', 'paid']
+	list_display = ['pk', order_detail, 'paid', 'total_cost', 'stripe_id', 'post_code', 'town', 'country', 'date_created']
 	list_filter = ['paid', 'date_created', 'date_updated']
 	inlines = [OrderInline]
 	actions = [export_to_csv]
